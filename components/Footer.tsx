@@ -7,6 +7,9 @@ export function Footer() {
         <div>
           <p className="font-serif text-3xl tracking-tight text-ink dark:text-ivory">Örnflychts Förlag</p>
           <p className="mt-4 max-w-sm leading-7">Böcker om historia, kulturarv och samtida kultur. Kvalitet framför kvantitet.</p>
+          <a href="mailto:info@ornflychts.se" className="mt-5 inline-block text-sm font-semibold text-forest transition hover:text-brass dark:text-brass dark:hover:text-ivory">
+            info@ornflychts.se
+          </a>
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brass">Utgivning</p>
