@@ -37,6 +37,7 @@ För att aktivera detta i Cloudflare Pages:
    - `STRIPE_SECRET_KEY`
    - `STRIPE_WEBHOOK_SECRET`
    - `ADMIN_TOKEN`
+   - `ADMIN_EMAIL=info@ornflychts.se`
    - `SITE_URL=https://ornflychts.se`
 5. Aktivera Swish i Stripe Dashboard under betalmetoder för Checkout.
 6. Skapa Stripe-webhook till `https://ornflychts.se/api/stripe-webhook` för eventet `checkout.session.completed`.

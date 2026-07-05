@@ -16,6 +16,13 @@ export default function AdminPage() {
             Orderdata hämtas via API:et <code>/api/admin/orders</code>. Skydda anropet med headern
             <code> x-admin-token</code> och miljövariabeln <code>ADMIN_TOKEN</code> i Cloudflare.
           </p>
+          <p className="mt-5 text-sm leading-7 text-ink/64 dark:text-ivory/64">
+            Administrativ kontakt och ordermail:{" "}
+            <a href="mailto:info@ornflychts.se" className="font-semibold text-forest dark:text-brass">
+              info@ornflychts.se
+            </a>
+            .
+          </p>
         </div>
       </div>
     </main>
