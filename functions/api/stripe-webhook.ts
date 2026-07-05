@@ -3,6 +3,11 @@ type Env = {
   DB?: D1Database;
 };
 
+const privateHeaders = {
+  "cache-control": "no-store",
+  "x-robots-tag": "noindex, nofollow"
+};
+
 function hexToBytes(hex: string) {
   const bytes = new Uint8Array(hex.length / 2);
   for (let index = 0; index < bytes.length; index += 1) {
@@ -42,7 +47,7 @@ async function verifySignature(request: Request, body: string, env: Env) {
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const body = await request.text();
   const verified = await verifySignature(request, body, env);
-  if (!verified) return Response.json({ error: "Webhook saknar verifiering." }, { status: 401 });
+  if (!verified) return Response.json({ error: "Webhook saknar verifiering." }, { status: 401, headers: privateHeaders });
 
   const event = JSON.parse(body) as {
     type?: string;
@@ -58,5 +63,5 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     }
   }
 
-  return Response.json({ received: true });
+  return Response.json({ received: true }, { headers: privateHeaders });
 };

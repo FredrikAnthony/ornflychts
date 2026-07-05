@@ -24,6 +24,8 @@ Cloudflare Pages-inställningar:
 - Build output directory: `out`
 - Root directory: lämnas tom om repots rot används
 
+`public/_headers` sätter säkerhetsheaders för Cloudflare Pages, inklusive HSTS, CSP, frame-skydd och no-store/noindex för admin/API.
+
 ## E-handel
 
 Sajten har en första e-handelsgrund med varukorg, Stripe Checkout, Swish via Stripe, fast fraktlogik, D1-tabell för order samt skyddad orderadmin via API.

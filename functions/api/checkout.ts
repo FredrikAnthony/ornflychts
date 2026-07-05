@@ -11,9 +11,14 @@ type CartLine = {
   quantity: number;
 };
 
+const privateHeaders = {
+  "cache-control": "no-store",
+  "x-robots-tag": "noindex, nofollow"
+};
+
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   if (!env.STRIPE_SECRET_KEY) {
-    return Response.json({ error: "Stripe saknar STRIPE_SECRET_KEY i Cloudflare." }, { status: 500 });
+    return Response.json({ error: "Stripe saknar STRIPE_SECRET_KEY i Cloudflare." }, { status: 500, headers: privateHeaders });
   }
 
   const body = (await request.json()) as { items?: CartLine[]; email?: string };
@@ -23,7 +28,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     .filter((item): item is { product: NonNullable<ReturnType<typeof getProduct>>; quantity: number } => Boolean(item.product));
 
   if (items.length === 0) {
-    return Response.json({ error: "Varukorgen är tom." }, { status: 400 });
+    return Response.json({ error: "Varukorgen är tom." }, { status: 400, headers: privateHeaders });
   }
 
   const subtotalSek = items.reduce((total, item) => total + item.product.priceSek * item.quantity, 0);
@@ -68,7 +73,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
 
   const session = (await stripeResponse.json()) as { id?: string; url?: string; error?: { message?: string } };
   if (!stripeResponse.ok || !session.url) {
-    return Response.json({ error: session.error?.message ?? "Stripe kunde inte skapa kassan." }, { status: 502 });
+    return Response.json({ error: session.error?.message ?? "Stripe kunde inte skapa kassan." }, { status: 502, headers: privateHeaders });
   }
 
   if (env.DB) {
@@ -79,5 +84,5 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       .run();
   }
 
-  return Response.json({ url: session.url });
+  return Response.json({ url: session.url }, { headers: privateHeaders });
 };
