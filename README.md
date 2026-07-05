@@ -20,7 +20,7 @@ Detta ska deployas som Cloudflare Pages, inte som Cloudflare Worker. Repot sakna
 Cloudflare Pages-inställningar:
 
 - Framework preset: `Next.js (Static HTML Export)`
-- Build command: `npx next build`
+- Build command: `npm run build`
 - Build output directory: `out`
 - Root directory: lämnas tom om repots rot används
 
