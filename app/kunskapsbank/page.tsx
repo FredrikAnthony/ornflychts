@@ -7,7 +7,7 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Kunskapsbank",
-  description: "Ämnessidor från Örnflychts Förlag om Hanna Lindh, Norrtälje, Roslagen, byggnadshistoria, street art, graffiti och konsthistoria.",
+  description: "Ämnessidor från Örnflychts Förlag om Hanna Lindh, Norrtälje, Roslagen, byggnadshistoria och konsthistoria.",
   openGraph: {
     title: `Kunskapsbank | ${site.name}`,
     description: "Ämnessidor och faktastruktur från Örnflychts Förlag.",

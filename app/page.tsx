@@ -41,7 +41,7 @@ export default function HomePage() {
           {
             question: "Vad ger Örnflychts Förlag ut?",
             answer:
-              "Förlaget ger ut böcker, pamfletter och artiklar om lokalhistoria, kulturhistoria, konst, street art, graffiti, essäer, dokumentation och forskning."
+              "Förlaget ger ut böcker, pamfletter och artiklar om lokalhistoria, kulturhistoria, konsthistoria, essäer, dokumentation och forskning."
           },
           {
             question: "Varför heter förlaget Örnflychts Förlag?",
@@ -92,7 +92,7 @@ export default function HomePage() {
           </div>
           <div className="space-y-6 text-lg leading-9 text-ink/76 dark:text-ivory/76">
             <p>
-              Örnflychts Förlag publicerar lokalhistoria, kulturhistoria, konst, street art, graffiti, essäer,
+              Örnflychts Förlag publicerar lokalhistoria, kulturhistoria, konsthistoria, essäer,
               dokumentation och forskning. Utgivningen ska vara liten nog att vara noggrant redigerad och tydlig nog
               att fungera som kunskapsbank över tid.
             </p>

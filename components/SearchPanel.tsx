@@ -43,7 +43,7 @@ export function SearchPanel({ items }: { items: SearchItem[] }) {
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 className="w-full border border-line bg-paper py-4 pl-12 pr-4 text-base text-ink outline-none transition focus:border-forest dark:border-white/15 dark:bg-ink dark:text-ivory"
-                placeholder="Sök exempelvis Hanna Lindh, graffiti eller byggnadshistoria"
+                placeholder="Sök exempelvis Hanna Lindh, konsthistoria eller byggnadshistoria"
               />
             </label>
             <div className="mt-5 grid gap-3">

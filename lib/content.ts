@@ -60,7 +60,7 @@ export const books: Book[] = [
     description:
       "Berättelsen om Johanna \"Hanna\" Charlotta Lindh och Pensionat Granparken i Norrtälje. Boken rör sig genom lokalhistoria, bildning, socialt engagemang och ett hus som blev mötesplats.",
     buyUrl: "https://buy.stripe.com/8x2aEQaVd5Ci9iGaca9oc00?locale=sv",
-    sampleUrl: "/artiklar/hanna-lindh-och-granparken",
+    sampleUrl: "https://hannalindh.se",
     reviews: [
       "En kulturhistorisk berättelse med lokal förankring.",
       "Ett arkivnära arbete om bildning, plats och minne."
@@ -70,8 +70,8 @@ export const books: Book[] = [
   {
     slug: "not-street-art",
     title: "Not Street Art",
-    subtitle: "Gatukonsten och det okända som ett queertemporalt tillstånd",
-    category: "Konst och street art",
+    subtitle: "Det okända som konsthistoriskt problem",
+    category: "Konsthistoria",
     year: "Våren 2016",
     isbn: "978-91-981103-2-6",
     pages: "141 sidor",
@@ -80,10 +80,10 @@ export const books: Book[] = [
     status: "available",
     image: "/assets/not-street-art.jpg",
     description:
-      "En bok som prövar gatukonst bortom kronologi och geografi. Utgångspunkten är det okända: gatukonst som icke-rumsligt fenomen, inte historiserad och inte låst vid stad eller land.",
+      "En bok som prövar hur offentliga bilduttryck kan förstås bortom kronologi och geografi. Utgångspunkten är det okända: ett icke-rumsligt fenomen, inte historiserat och inte låst vid stad eller land.",
     buyUrl: "https://cargocollective.com/FredrikAnthony/Not-Street-Art",
-    reviews: ["Ett koncentrerat bidrag till diskussionen om gatukonstens rum och historieskrivning."],
-    subjects: ["street art", "graffiti", "konsthistoria", "samtida kultur"]
+    reviews: ["Ett koncentrerat bidrag till diskussionen om bildkultur, rum och historieskrivning."],
+    subjects: ["konsthistoria", "samtida kultur", "offentlighet"]
   },
   {
     slug: "efterblivelser",
@@ -136,14 +136,14 @@ export const articles: Article[] = [
     related: ["norrtalje", "roslagens-historia", "svensk-byggnadshistoria"]
   },
   {
-    slug: "gatukonst-som-kunskapsfalt",
-    title: "Gatukonst som kunskapsfält",
+    slug: "konsthistoria-som-kunskapsfalt",
+    title: "Konsthistoria som kunskapsfält",
     excerpt:
-      "Street art och graffiti behandlas här som dokumentation, samtidskultur och konsthistoriskt material.",
+      "Konsthistoriskt material behandlas här som dokumentation, samtidskultur och källa.",
     author: "Örnflychts Förlag",
     date: "2026-07-05",
     category: "Konst",
-    related: ["street-art", "graffiti", "konsthistoria"]
+    related: ["konsthistoria"]
   },
   {
     slug: "kulturarv-utan-overtoner",
@@ -187,24 +187,10 @@ export const topics: Topic[] = [
     related: ["hanna-lindh", "roslagens-historia"]
   },
   {
-    slug: "street-art",
-    title: "Street art",
-    summary: "Samtida kulturform där plats, anonymitet och dokumentation är centrala.",
-    facts: ["Behandlas i Not Street Art.", "Kopplas till stad, offentlighet och historieskrivning."],
-    related: ["graffiti", "konsthistoria"]
-  },
-  {
-    slug: "graffiti",
-    title: "Graffiti",
-    summary: "Ett bild- och skrivfält mellan subkultur, dokumentation och konsthistoria.",
-    facts: ["Ingår i förlagets samtidskulturella utgivning.", "Kräver noggrann kontextualisering."],
-    related: ["street-art", "konsthistoria"]
-  },
-  {
     slug: "konsthistoria",
     title: "Konsthistoria",
     summary: "Ett verktyg för att förstå både etablerade konstfält och perifera uttryck.",
-    facts: ["Berör både Terracotta och gatukonst.", "Knyter samman forskning, dokumentation och essä."],
-    related: ["street-art", "graffiti"]
+    facts: ["Berör både Terracotta och samtida bildkultur.", "Knyter samman forskning, dokumentation och essä."],
+    related: ["svensk-byggnadshistoria"]
   }
 ];

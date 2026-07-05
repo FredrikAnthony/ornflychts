@@ -131,7 +131,7 @@ export default async function BookPage({ params }: PageProps) {
               )}
               {book.sampleUrl ? (
                 <Link href={book.sampleUrl} className="link-button">
-                  Provläsning
+                  {book.slug === "hannas-hus" ? "Hanna Lindh-sidan" : "Provläsning"}
                 </Link>
               ) : null}
             </div>
