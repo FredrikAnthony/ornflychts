@@ -8,7 +8,7 @@ export const products = [
 ];
 
 export const shipping = {
-  standardSek: 59,
+  standardSek: 69,
   freeAboveSek: 600
 };
 
