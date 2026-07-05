@@ -101,10 +101,10 @@ export function CartPageClient() {
         </label>
         {error ? <p className="mt-4 text-sm text-red-700 dark:text-red-300">{error}</p> : null}
         <button type="button" onClick={checkout} disabled={loading} className="link-button-solid mt-6 w-full disabled:opacity-60">
-          {loading ? "Öppnar kassa..." : "Betala med Stripe"}
+          {loading ? "Öppnar kassa..." : "Betala med kort eller Swish"}
         </button>
         <p className="mt-4 text-xs leading-6 text-ink/56 dark:text-ivory/56">
-          Swish kan aktiveras i Stripe om betalmetoden är godkänd för kontot. Kvitto skickas via Stripe.
+          Betalningen hanteras av Stripe. Swish visas när betalmetoden är aktiverad och godkänd för kontot.
         </p>
       </aside>
     </div>
