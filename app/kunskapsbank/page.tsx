@@ -28,7 +28,7 @@ export default function KnowledgePage() {
         <Breadcrumbs items={[{ label: "Kunskapsbank" }]} />
         <header className="mt-10 max-w-3xl">
           <p className="eyebrow">Kunskapsbank</p>
-          <h1 className="mt-4 font-serif text-5xl text-ink dark:text-ivory">Ämnessidor</h1>
+          <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Ämnessidor</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
             Kunskapsbanken samlar centrala personer, platser och begrepp i förlagets utgivning. Sidorna är skrivna med
             tydliga rubriker, korta stycken och intern länkning.
@@ -39,7 +39,7 @@ export default function KnowledgePage() {
             <Link
               key={topic.slug}
               href={`/kunskapsbank/${topic.slug}`}
-              className="border border-line p-6 transition hover:border-brass dark:border-white/10"
+              className="card p-7"
             >
               <h2 className="font-serif text-2xl text-ink dark:text-ivory">{topic.title}</h2>
               <p className="mt-3 text-sm leading-7 text-ink/68 dark:text-ivory/68">{topic.summary}</p>

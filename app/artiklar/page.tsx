@@ -28,7 +28,7 @@ export default function ArticlesPage() {
         <Breadcrumbs items={[{ label: "Artiklar" }]} />
         <header className="mt-10 max-w-3xl">
           <p className="eyebrow">Artikelbibliotek</p>
-          <h1 className="mt-4 font-serif text-5xl text-ink dark:text-ivory">Artiklar</h1>
+          <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Artiklar</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
             Artiklarna ger sökbar kontext till böckerna, ämnena och förlagets arbetssätt. Varje artikel har metadata,
             författare, publiceringsdatum och relaterade ämnen.
@@ -39,9 +39,9 @@ export default function ArticlesPage() {
             <Link
               key={article.slug}
               href={`/artiklar/${article.slug}`}
-              className="border border-line p-6 transition hover:border-brass dark:border-white/10"
+              className="card p-7"
             >
-              <p className="text-xs uppercase tracking-[0.22em] text-brass">{article.category}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brass">{article.category}</p>
               <h2 className="mt-3 font-serif text-2xl text-ink dark:text-ivory">{article.title}</h2>
               <p className="mt-3 text-sm leading-7 text-ink/68 dark:text-ivory/68">{article.excerpt}</p>
               <p className="mt-5 text-xs text-ink/55 dark:text-ivory/55">

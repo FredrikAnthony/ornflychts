@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-serif: Georgia, "Times New Roman", serif;
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -14,7 +9,7 @@ html {
 body {
   background: #f6f1e7;
   color: #11130f;
-  font-family: var(--font-sans);
+  font-family: var(--font-sans, Inter, ui-sans-serif, system-ui, sans-serif);
 }
 
 .dark body {
@@ -22,24 +17,47 @@ body {
   color: #fffaf0;
 }
 
+@layer base {
+  h1,
+  h2,
+  h3 {
+    @apply tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-brass/30 text-ink dark:text-ivory;
+  }
+}
+
 @layer components {
   .section {
     @apply border-b border-line py-20 dark:border-white/10 lg:py-28;
   }
 
-  .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.28em] text-brass;
+  .eyebrow,
+  .kicker {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-brass;
   }
 
-  .kicker {
-    @apply text-xs font-semibold uppercase tracking-[0.28em] text-brass;
+  .eyebrow::before,
+  .kicker::before {
+    content: "";
+    @apply h-px w-8 bg-brass/70;
+  }
+
+  .rule {
+    @apply block h-px w-16 bg-brass/70;
   }
 
   .link-button {
-    @apply inline-flex min-h-11 items-center justify-center border border-forest px-5 py-3 text-sm font-semibold text-forest transition hover:bg-forest hover:text-ivory dark:border-brass dark:text-brass dark:hover:bg-brass dark:hover:text-ink;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 border border-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-forest transition duration-300 hover:border-ink hover:bg-forest hover:text-ivory dark:border-brass dark:text-brass dark:hover:border-ivory dark:hover:bg-brass dark:hover:text-ink;
   }
 
   .link-button-solid {
-    @apply inline-flex min-h-11 items-center justify-center border border-forest bg-forest px-5 py-3 text-sm font-semibold text-ivory transition hover:bg-ink dark:border-brass dark:bg-brass dark:text-ink dark:hover:bg-ivory;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 border border-forest bg-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-ivory transition duration-300 hover:border-ink hover:bg-ink dark:border-brass dark:bg-brass dark:text-ink dark:hover:bg-ivory;
+  }
+
+  .card {
+    @apply border border-line bg-ivory transition duration-300 hover:border-brass hover:shadow-[0_18px_40px_-24px_rgba(17,19,15,0.35)] dark:border-white/10 dark:bg-white/5 dark:hover:border-brass/70;
   }
 }

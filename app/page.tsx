@@ -51,7 +51,7 @@ export default function HomePage() {
         ])}
       />
 
-      <section className="relative min-h-[78vh] overflow-hidden border-b border-line dark:border-white/10">
+      <section className="relative min-h-[86vh] overflow-hidden border-b border-line dark:border-white/10">
         <Image
           src="/assets/ornflycht-intro.jpeg"
           alt="Stilleben från Örnflychts Förlag"
@@ -60,17 +60,17 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-paper/95 via-paper/70 to-paper/15 dark:from-ink/96 dark:via-ink/74 dark:to-ink/20" />
-        <div className="relative mx-auto flex min-h-[78vh] max-w-page items-center px-5 py-20 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-r from-paper via-paper/78 to-paper/10 dark:from-ink dark:via-ink/82 dark:to-ink/15" />
+        <div className="relative mx-auto flex min-h-[86vh] max-w-page items-center px-5 py-24 lg:px-8">
           <div className="max-w-3xl">
             <p className="eyebrow">Etablerat för långsam läsning</p>
-            <h1 className="mt-6 font-serif text-5xl leading-none text-ink dark:text-ivory md:text-7xl">
+            <h1 className="mt-7 font-serif text-6xl leading-[0.95] tracking-tight text-ink dark:text-ivory md:text-8xl">
               Örnflychts Förlag
             </h1>
-            <p className="mt-6 max-w-2xl text-xl leading-9 text-ink/76 dark:text-ivory/76">
+            <p className="mt-7 max-w-xl text-xl italic leading-9 text-ink/78 dark:text-ivory/78">
               Böcker om historia, kulturarv och samtida kultur.
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/bocker" className="link-button-solid">
                 Utforska böcker
               </Link>
@@ -83,10 +83,10 @@ export default function HomePage() {
       </section>
 
       <section id="forlaget" className="section">
-        <div className="mx-auto grid max-w-page gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div className="mx-auto grid max-w-page gap-14 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
             <p className="eyebrow">Om förlaget</p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-ink dark:text-ivory md:text-5xl">
+            <h2 className="mt-5 font-serif text-4xl leading-tight text-ink dark:text-ivory md:text-5xl">
               Smal utgivning med arkiv, plats och blick för samtiden.
             </h2>
           </div>
@@ -114,7 +114,7 @@ export default function HomePage() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="eyebrow">Böcker</p>
-              <h2 id="bocker" className="mt-4 font-serif text-4xl text-ink dark:text-ivory md:text-5xl">
+              <h2 id="bocker" className="mt-5 font-serif text-4xl text-ink dark:text-ivory md:text-5xl">
                 Utgivning
               </h2>
             </div>
@@ -122,7 +122,7 @@ export default function HomePage() {
               Hela bokbiblioteket
             </Link>
           </div>
-          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {books.map((book) => (
               <BookCard key={book.slug} book={book} />
             ))}
@@ -131,10 +131,10 @@ export default function HomePage() {
       </section>
 
       <section className="section" aria-labelledby="grundaren">
-        <div className="mx-auto grid max-w-page gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+        <div className="mx-auto grid max-w-page gap-14 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
             <p className="eyebrow">Om grundaren</p>
-            <h2 id="grundaren" className="mt-4 font-serif text-4xl text-ink dark:text-ivory md:text-5xl">
+            <h2 id="grundaren" className="mt-5 font-serif text-4xl text-ink dark:text-ivory md:text-5xl">
               Annika Thorin
             </h2>
           </div>
@@ -158,7 +158,7 @@ export default function HomePage() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="eyebrow">Artiklar</p>
-              <h2 id="artiklar" className="mt-4 font-serif text-4xl text-ink dark:text-ivory md:text-5xl">
+              <h2 id="artiklar" className="mt-5 font-serif text-4xl text-ink dark:text-ivory md:text-5xl">
                 Artikelbibliotek
               </h2>
             </div>
@@ -166,15 +166,15 @@ export default function HomePage() {
               Läs artiklar
             </Link>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             {articles.map((article) => (
               <Link
                 key={article.slug}
                 href={`/artiklar/${article.slug}`}
-                className="border border-line p-6 transition hover:border-brass dark:border-white/10"
+                className="card p-7"
               >
-                <p className="text-xs uppercase tracking-[0.22em] text-brass">{article.category}</p>
-                <h3 className="mt-3 font-serif text-2xl text-ink dark:text-ivory">{article.title}</h3>
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brass">{article.category}</p>
+                <h3 className="mt-3 font-serif text-2xl tracking-tight text-ink dark:text-ivory">{article.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-ink/68 dark:text-ivory/68">{article.excerpt}</p>
               </Link>
             ))}

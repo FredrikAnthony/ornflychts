@@ -27,13 +27,13 @@ export default function ContactPage() {
         <Breadcrumbs items={[{ label: "Kontakt" }]} />
         <header className="mt-10">
           <p className="eyebrow">Kontakt</p>
-          <h1 className="mt-4 font-serif text-5xl text-ink dark:text-ivory">Örnflychts Förlag</h1>
+          <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Örnflychts Förlag</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
             För beställningar, återförsäljare, press och frågor om utgivningen.
           </p>
         </header>
-        <div className="mt-10 border border-line p-7 dark:border-white/10">
-          <p className="text-sm uppercase tracking-[0.22em] text-brass">E-post</p>
+        <div className="card mt-10 p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brass">E-post</p>
           <a href="mailto:info@ornflychts.se" className="mt-3 block font-serif text-3xl text-ink dark:text-ivory">
             info@ornflychts.se
           </a>

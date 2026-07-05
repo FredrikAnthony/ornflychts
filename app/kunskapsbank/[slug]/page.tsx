@@ -53,7 +53,7 @@ export default async function TopicPage({ params }: PageProps) {
         <Breadcrumbs items={[{ label: "Kunskapsbank", href: "/kunskapsbank" }, { label: topic.title }]} />
         <header className="mt-10">
           <p className="eyebrow">Ämne</p>
-          <h1 className="mt-4 font-serif text-5xl leading-tight text-ink dark:text-ivory">{topic.title}</h1>
+          <h1 className="mt-4 font-serif text-5xl leading-tight tracking-tight text-ink dark:text-ivory">{topic.title}</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">{topic.summary}</p>
         </header>
 
@@ -76,17 +76,17 @@ export default async function TopicPage({ params }: PageProps) {
           </h2>
           <div className="mt-5 grid gap-3">
             {relatedTopics.map((item) => (
-              <Link key={item.slug} href={`/kunskapsbank/${item.slug}`} className="border border-line p-4 dark:border-white/10">
+              <Link key={item.slug} href={`/kunskapsbank/${item.slug}`} className="card p-4">
                 {item.title}
               </Link>
             ))}
             {relatedArticles.map((article) => (
-              <Link key={article.slug} href={`/artiklar/${article.slug}`} className="border border-line p-4 dark:border-white/10">
+              <Link key={article.slug} href={`/artiklar/${article.slug}`} className="card p-4">
                 {article.title}
               </Link>
             ))}
             {relatedBooks.map((book) => (
-              <Link key={book.slug} href={`/bocker/${book.slug}`} className="border border-line p-4 dark:border-white/10">
+              <Link key={book.slug} href={`/bocker/${book.slug}`} className="card p-4">
                 {book.title}
               </Link>
             ))}

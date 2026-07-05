@@ -56,7 +56,7 @@ export default async function ArticlePage({ params }: PageProps) {
         <Breadcrumbs items={[{ label: "Artiklar", href: "/artiklar" }, { label: article.title }]} />
         <header className="mt-10">
           <p className="eyebrow">{article.category}</p>
-          <h1 className="mt-4 font-serif text-5xl leading-tight text-ink dark:text-ivory">{article.title}</h1>
+          <h1 className="mt-4 font-serif text-5xl leading-tight tracking-tight text-ink dark:text-ivory">{article.title}</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">{article.excerpt}</p>
           <p className="mt-6 text-sm text-ink/58 dark:text-ivory/58">
             {article.author} / Publicerad {article.date}
@@ -86,12 +86,12 @@ export default async function ArticlePage({ params }: PageProps) {
           </h2>
           <div className="mt-5 grid gap-3">
             {relatedTopics.map((topic) => (
-              <Link key={topic.slug} href={`/kunskapsbank/${topic.slug}`} className="border border-line p-4 dark:border-white/10">
+              <Link key={topic.slug} href={`/kunskapsbank/${topic.slug}`} className="card p-4">
                 {topic.title}
               </Link>
             ))}
             {relatedBooks.map((book) => (
-              <Link key={book.slug} href={`/bocker/${book.slug}`} className="border border-line p-4 dark:border-white/10">
+              <Link key={book.slug} href={`/bocker/${book.slug}`} className="card p-4">
                 {book.title}
               </Link>
             ))}

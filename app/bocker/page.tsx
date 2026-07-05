@@ -28,7 +28,7 @@ export default function BooksPage() {
         <Breadcrumbs items={[{ label: "Böcker" }]} />
         <header className="mt-10 max-w-3xl">
           <p className="eyebrow">Bokbibliotek</p>
-          <h1 className="mt-4 font-serif text-5xl text-ink dark:text-ivory">Böcker att beställa</h1>
+          <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Böcker att beställa</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
             Utgivningen samlar lokalhistoria, kulturhistoria, konst, street art, graffiti, essäer och dokumentation.
             Varje titel presenteras med omslag, metadata, provläsning och köpväg.

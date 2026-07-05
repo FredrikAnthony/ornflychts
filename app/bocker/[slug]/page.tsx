@@ -82,7 +82,7 @@ export default async function BookPage({ params }: PageProps) {
           </div>
           <div>
             <p className="eyebrow">{book.category}</p>
-            <h1 className="mt-4 font-serif text-5xl leading-tight text-ink dark:text-ivory">{book.title}</h1>
+            <h1 className="mt-4 font-serif text-5xl leading-tight tracking-tight text-ink dark:text-ivory">{book.title}</h1>
             <p className="mt-4 text-2xl leading-8 text-ink/70 dark:text-ivory/70">{book.subtitle}</p>
             <p className="mt-8 text-lg leading-9 text-ink/78 dark:text-ivory/78">{book.description}</p>
 
@@ -149,8 +149,8 @@ export default async function BookPage({ params }: PageProps) {
           </h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {related.map((item) => (
-              <Link key={item.slug} href={`/bocker/${item.slug}`} className="border border-line p-5 dark:border-white/10">
-                <p className="text-xs uppercase tracking-[0.22em] text-brass">{item.category}</p>
+              <Link key={item.slug} href={`/bocker/${item.slug}`} className="card p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brass">{item.category}</p>
                 <h3 className="mt-2 font-serif text-xl text-ink dark:text-ivory">{item.title}</h3>
               </Link>
             ))}
