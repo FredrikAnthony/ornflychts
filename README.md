@@ -15,9 +15,12 @@ npm run dev
 
 Projektet är konfigurerat med `output: "export"` och bygger statiska filer till `out/`.
 
-Cloudflare Pages:
+Detta ska deployas som Cloudflare Pages, inte som Cloudflare Worker. Repot saknar Worker-entrypoint och `wrangler.toml`, och `next.config.mjs` använder statisk Next-export.
 
-- Build command: `npm run build`
+Cloudflare Pages-inställningar:
+
+- Framework preset: `Next.js (Static HTML Export)`
+- Build command: `npx next build`
 - Build output directory: `out`
 - Root directory: lämnas tom om repots rot används
 
