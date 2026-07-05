@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
+import { CartHeaderLink } from "./CartHeaderLink";
 
 const nav = [
   ["Böcker", "/bocker"],
@@ -28,6 +29,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
+          <CartHeaderLink />
           <ThemeToggle />
         </div>
       </div>

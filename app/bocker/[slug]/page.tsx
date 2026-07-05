@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { books, site } from "@/lib/content";
 import { bookJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
+import { AddToCartButton, CartCheckoutLink } from "@/components/AddToCartButton";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -118,9 +119,16 @@ export default async function BookPage({ params }: PageProps) {
             </dl>
 
             <div className="mt-7 flex flex-wrap gap-3">
-              <a href={book.buyUrl} className="link-button-solid">
-                Köp boken
-              </a>
+              {book.priceSek ? (
+                <>
+                  <AddToCartButton slug={book.slug} />
+                  <CartCheckoutLink />
+                </>
+              ) : (
+                <a href={book.buyUrl} className="link-button-solid">
+                  Beställ boken
+                </a>
+              )}
               {book.sampleUrl ? (
                 <Link href={book.sampleUrl} className="link-button">
                   Provläsning

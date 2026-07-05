@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Book } from "@/lib/content";
+import { AddToCartButton } from "./AddToCartButton";
 
 export function BookCard({ book }: { book: Book }) {
   return (
@@ -19,7 +20,7 @@ export function BookCard({ book }: { book: Book }) {
         <p className="mt-2 text-sm text-ink/78 dark:text-ivory/78">{book.pages}{book.edition ? ` · ${book.edition}` : ""}</p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link href={`/bocker/${book.slug}`} className="link-button">Läs mer</Link>
-          <a href={book.buyUrl} className="link-button-solid">Köp</a>
+          {book.priceSek ? <AddToCartButton slug={book.slug} label="Köp" /> : <a href={book.buyUrl} className="link-button-solid">Beställ</a>}
         </div>
       </div>
     </article>

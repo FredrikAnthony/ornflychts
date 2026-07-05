@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationJsonLd } from "@/lib/seo";
 import { site } from "@/lib/content";
+import { CartProvider } from "@/components/CartProvider";
 
 const serif = Newsreader({
   subsets: ["latin"],
@@ -51,10 +52,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="sv" suppressHydrationWarning className={`${serif.variable} ${sans.variable}`}>
       <body className="bg-paper text-ink antialiased dark:bg-ink dark:text-ivory">
-        <JsonLd data={organizationJsonLd()} />
-        <Header />
-        {children}
-        <Footer />
+        <CartProvider>
+          <JsonLd data={organizationJsonLd()} />
+          <Header />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

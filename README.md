@@ -24,4 +24,22 @@ Cloudflare Pages-inställningar:
 - Build output directory: `out`
 - Root directory: lämnas tom om repots rot används
 
+## E-handel
+
+Sajten har en första e-handelsgrund med varukorg, Stripe Checkout, Swish via Stripes automatiska betalmetoder, fast fraktlogik, D1-tabeller för order och lager samt skyddad orderadmin via API.
+
+För att aktivera detta i Cloudflare Pages:
+
+1. Skapa en D1-databas, till exempel `ornflychts`.
+2. Kör SQL från `schema.sql` i D1.
+3. Lägg till D1-binding i Cloudflare Pages: `DB`.
+4. Lägg till miljövariabler/secrets:
+   - `STRIPE_SECRET_KEY`
+   - `STRIPE_WEBHOOK_SECRET`
+   - `ADMIN_TOKEN`
+   - `SITE_URL=https://ornflychts.se`
+5. Skapa Stripe-webhook till `https://ornflychts.se/api/stripe-webhook` för eventet `checkout.session.completed`.
+
+`wrangler.example.toml` visar hur D1-bindingen kan se ut om projektet hanteras med Wrangler. Kopiera den till `wrangler.toml` först när ett riktigt D1 database-id finns.
+
 PDF-filen `hannas hus 13 november.pdf` ska inte ändras eller laddas upp. Ospårade originalbilder ska inte laddas upp utan uttrycklig begäran.
