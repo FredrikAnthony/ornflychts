@@ -26,7 +26,7 @@ Cloudflare Pages-inställningar:
 
 ## E-handel
 
-Sajten har en första e-handelsgrund med varukorg, Stripe Checkout, Swish via Stripe, fast fraktlogik, D1-tabeller för order och lager samt skyddad orderadmin via API.
+Sajten har en första e-handelsgrund med varukorg, Stripe Checkout, Swish via Stripe, fast fraktlogik, D1-tabell för order samt skyddad orderadmin via API.
 
 För att aktivera detta i Cloudflare Pages:
 

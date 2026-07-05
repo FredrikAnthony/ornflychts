@@ -17,10 +17,7 @@ export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
     "SELECT id, stripe_session_id, email, status, subtotal_sek, shipping_sek, total_sek, created_at, paid_at FROM orders ORDER BY created_at DESC LIMIT 100"
   ).all();
 
-  const inventory = await env.DB.prepare("SELECT slug, quantity, updated_at FROM inventory ORDER BY slug").all();
-
   return Response.json({
-    orders: orders.results,
-    inventory: inventory.results
+    orders: orders.results
   });
 };

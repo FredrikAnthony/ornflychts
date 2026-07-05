@@ -60,7 +60,7 @@ export default async function BookPage({ params }: PageProps) {
         data={faqJsonLd([
           {
             question: `Kan jag beställa ${book.title}?`,
-            answer: `${book.title} kan beställas via köpknappen på sidan. Lagerstatus visas som ${book.status === "available" ? "tillgänglig" : book.status}.`
+            answer: `${book.title} kan beställas via köpknappen på sidan. Status visas som ${book.status === "available" ? "beställningsbar" : book.status}.`
           },
           {
             question: `Finns provläsning av ${book.title}?`,
@@ -101,8 +101,8 @@ export default async function BookPage({ params }: PageProps) {
                 <dd className="mt-1 text-ink dark:text-ivory">{book.edition ?? "Kommer"}</dd>
               </div>
               <div>
-                <dt className="text-ink/52 dark:text-ivory/52">Lagerstatus</dt>
-                <dd className="mt-1 text-ink dark:text-ivory">{book.status === "available" ? "I lager" : book.status}</dd>
+                <dt className="text-ink/52 dark:text-ivory/52">Status</dt>
+                <dd className="mt-1 text-ink dark:text-ivory">{book.status === "available" ? "Beställningsbar" : book.status}</dd>
               </div>
               {book.design ? (
                 <div>

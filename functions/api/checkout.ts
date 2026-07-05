@@ -26,16 +26,6 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     return Response.json({ error: "Varukorgen är tom." }, { status: 400 });
   }
 
-  if (env.DB) {
-    for (const item of items) {
-      if (!item.product.stockManaged) continue;
-      const row = await env.DB.prepare("SELECT quantity FROM inventory WHERE slug = ?").bind(item.product.slug).first<{ quantity: number }>();
-      if (row && row.quantity < item.quantity) {
-        return Response.json({ error: `${item.product.title} finns inte i önskat antal.` }, { status: 409 });
-      }
-    }
-  }
-
   const subtotalSek = items.reduce((total, item) => total + item.product.priceSek * item.quantity, 0);
   const shippingSek = subtotalSek >= shipping.freeAboveSek ? 0 : shipping.standardSek;
   const siteUrl = env.SITE_URL ?? new URL(request.url).origin;

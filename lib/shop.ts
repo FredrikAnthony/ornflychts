@@ -12,8 +12,7 @@ export const shopProducts = books
     title: book.title,
     subtitle: book.subtitle,
     image: book.image,
-    priceSek: book.priceSek as number,
-    stockManaged: Boolean(book.stockManaged)
+    priceSek: book.priceSek as number
   }));
 
 export type ShopProduct = (typeof shopProducts)[number];

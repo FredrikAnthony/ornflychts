@@ -38,7 +38,7 @@ export default function ContactPage() {
             info@ornflychts.se
           </a>
           <p className="mt-6 text-sm leading-7 text-ink/68 dark:text-ivory/68">
-            Swish, fraktvillkor och lageruppgifter kan kopplas till respektive bok när betalningsflödet är färdigställt.
+            Swish och fraktvillkor kan kopplas till respektive bok när betalningsflödet är färdigställt.
           </p>
         </div>
       </div>

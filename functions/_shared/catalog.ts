@@ -2,8 +2,7 @@ export const products = [
   {
     slug: "hannas-hus",
     title: "Hannas hus",
-    priceSek: 299,
-    stockManaged: true
+    priceSek: 299
   }
 ];
 

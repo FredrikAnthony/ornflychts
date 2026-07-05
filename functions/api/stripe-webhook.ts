@@ -55,17 +55,6 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       await env.DB.prepare("UPDATE orders SET status = ?, paid_at = datetime('now'), email = COALESCE(email, ?) WHERE stripe_session_id = ?")
         .bind("paid", session.customer_email ?? null, session.id)
         .run();
-
-      const metadata = session.metadata ?? {};
-      for (let index = 0; index < 20; index += 1) {
-        const slug = metadata[`item_${index}_slug`];
-        const quantity = Number(metadata[`item_${index}_quantity`] ?? 0);
-        if (slug && quantity > 0) {
-          await env.DB.prepare("UPDATE inventory SET quantity = MAX(quantity - ?, 0), updated_at = datetime('now') WHERE slug = ?")
-            .bind(quantity, slug)
-            .run();
-        }
-      }
     }
   }
 
