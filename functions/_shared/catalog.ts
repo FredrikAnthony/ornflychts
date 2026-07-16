@@ -5,6 +5,21 @@ export const products = [
     priceSek: 299
   },
   {
+    slug: "citron",
+    title: "Citron",
+    priceSek: 120
+  },
+  {
+    slug: "martin-luther-king",
+    title: "Martin Luther King",
+    priceSek: 90
+  },
+  {
+    slug: "kockarnas-kokbok",
+    title: "Kockarnas kokbok",
+    priceSek: 65
+  },
+  {
     slug: "smak-av-svunnen-tid",
     title: "Smak av svunnen tid",
     priceSek: 80
@@ -38,11 +53,6 @@ export const products = [
     slug: "till-bords-hos-monet",
     title: "Till bords hos Monet",
     priceSek: 80
-  },
-  {
-    slug: "kockarnas-kokbok",
-    title: "Kockarnas kokbok",
-    priceSek: 65
   },
   {
     slug: "slaktforska-steg-for-steg",

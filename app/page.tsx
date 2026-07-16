@@ -9,7 +9,7 @@ import { breadcrumbJsonLd, faqJsonLd, websiteJsonLd } from "@/lib/seo";
 const searchItems: SearchItem[] = [
   ...books.map((book) => ({
     title: book.title,
-    description: `${book.subtitle}. ${book.description}`,
+    description: `${book.subtitle}. ${book.description} ${book.authorNote}`,
     href: `/bocker/${book.slug}`,
     type: "Bok"
   })),

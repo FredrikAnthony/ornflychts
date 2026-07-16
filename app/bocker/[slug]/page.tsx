@@ -86,6 +86,7 @@ export default async function BookPage({ params }: PageProps) {
             <h1 className="mt-4 font-serif text-5xl leading-tight tracking-tight text-ink dark:text-ivory">{book.title}</h1>
             <p className="mt-4 text-2xl leading-8 text-ink/70 dark:text-ivory/70">{book.subtitle}</p>
             <p className="mt-8 text-lg leading-9 text-ink/78 dark:text-ivory/78">{book.description}</p>
+            <p className="mt-5 text-base leading-8 text-ink/68 dark:text-ivory/68">{book.authorNote}</p>
 
             <dl className="mt-8 grid gap-4 border-y border-line py-6 text-sm dark:border-white/10 sm:grid-cols-2">
               <div>
