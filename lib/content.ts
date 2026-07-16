@@ -188,8 +188,8 @@ export const books: Book[] = [
     subjects: ["matkultur", "litteratur", "kulturhistoria"]
   },
   {
-    slug: "masken-ur-rosen",
-    title: "Masken ur rosen",
+    slug: "masken-uti-rosen",
+    title: "Masken uti rosen",
     subtitle: "Hjordis Levin",
     category: "Antikvariat",
     year: "Antikvariat",
@@ -198,7 +198,7 @@ export const books: Book[] = [
     status: "available",
     price: "60 kr",
     priceSek: 60,
-    image: "/assets/antikvariat/masken-ur-rosen.jpg",
+    image: "/assets/antikvariat/masken-uti-rosen.jpg",
     description: "Antikvarisk titel med kulturhistorisk och idéhistorisk inriktning.",
     authorNote:
       "Hjordis Levin behandlar politiska och idéhistoriska frågor med kulturhistoriskt material som utgångspunkt.",

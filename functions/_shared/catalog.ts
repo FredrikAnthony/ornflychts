@@ -30,8 +30,8 @@ export const products = [
     priceSek: 75
   },
   {
-    slug: "masken-ur-rosen",
-    title: "Masken ur rosen",
+    slug: "masken-uti-rosen",
+    title: "Masken uti rosen",
     priceSek: 60
   },
   {
