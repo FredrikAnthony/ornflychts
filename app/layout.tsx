@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`
   },
   description: site.description,
+  icons: {
+    icon: "/assets/ornflychts-icon.svg",
+    shortcut: "/assets/ornflychts-icon.svg",
+    apple: "/assets/ornflychts-icon.svg"
+  },
   openGraph: {
     title: site.name,
     description: site.description,
