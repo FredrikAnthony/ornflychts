@@ -11,6 +11,7 @@ export type Book = {
   status: "available" | "archive" | "forthcoming";
   price?: string;
   priceSek?: number;
+  availabilityNote?: string;
   image: string;
   description: string;
   authorNote: string;
@@ -57,6 +58,7 @@ export const books: Book[] = [
     status: "available",
     price: "299 kr",
     priceSek: 299,
+    availabilityNote: "Finns snart till försäljning",
     image: "/assets/hannas-hus-framsida.jpg",
     description:
       "Berättelsen om Johanna \"Hanna\" Charlotta Lindh och Pensionat Granparken i Norrtälje. Boken rör sig genom lokalhistoria, bildning, socialt engagemang och ett hus som blev mötesplats.",

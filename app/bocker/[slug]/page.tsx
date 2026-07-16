@@ -119,6 +119,12 @@ export default async function BookPage({ params }: PageProps) {
               ) : null}
             </dl>
 
+            {book.availabilityNote ? (
+              <p className="mt-6 border-l-2 border-brass pl-4 text-base font-semibold text-forest dark:text-brass">
+                {book.availabilityNote}
+              </p>
+            ) : null}
+
             <div className="mt-7 flex flex-wrap gap-3">
               {book.priceSek ? (
                 <>
