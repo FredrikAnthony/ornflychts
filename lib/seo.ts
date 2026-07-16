@@ -97,13 +97,3 @@ export function articleJsonLd(article: { title: string; excerpt: string; author:
     mainEntityOfPage: `${site.url}/artiklar/${article.slug}`
   };
 }
-
-export function topicJsonLd(topic: { title: string; summary: string; slug: string }) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "DefinedTerm",
-    name: topic.title,
-    description: topic.summary,
-    url: `${site.url}/kunskapsbank/${topic.slug}`
-  };
-}

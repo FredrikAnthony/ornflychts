@@ -17,7 +17,6 @@ export function Footer() {
             <Link href="/bocker" className="transition hover:text-forest dark:hover:text-brass">Böcker</Link>
             <Link href="/#antikvariat" className="transition hover:text-forest dark:hover:text-brass">Antikvariat</Link>
             <Link href="/artiklar" className="transition hover:text-forest dark:hover:text-brass">Artiklar</Link>
-            <Link href="/kunskapsbank" className="transition hover:text-forest dark:hover:text-brass">Kunskapsbank</Link>
           </div>
         </div>
         <div>

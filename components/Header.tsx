@@ -6,7 +6,6 @@ const nav = [
   ["Katalog", "/bocker"],
   ["Antikvariat", "/#antikvariat"],
   ["Artiklar", "/artiklar"],
-  ["Kunskapsbank", "/kunskapsbank"],
   ["Kontakt", "/kontakt"]
 ];
 

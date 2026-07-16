@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
-import { articles, books, site, topics } from "@/lib/content";
+import { articles, books, site } from "@/lib/content";
 import { articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 type PageProps = {
@@ -39,7 +39,6 @@ export default async function ArticlePage({ params }: PageProps) {
   const article = articles.find((item) => item.slug === slug);
   if (!article) notFound();
 
-  const relatedTopics = topics.filter((topic) => article.related.includes(topic.slug));
   const relatedBooks = books.filter((book) => book.subjects.some((subject) => article.excerpt.toLowerCase().includes(subject.toLowerCase()))).slice(0, 2);
 
   return (
@@ -65,8 +64,8 @@ export default async function ArticlePage({ params }: PageProps) {
 
         <div className="mt-12 space-y-7 text-lg leading-9 text-ink/76 dark:text-ivory/76">
           <p>
-            Den här artikeln är en ämnesingång i Örnflychts kunskapsbank. Texten är skriven för att ge tydlig kontext,
-            stabil terminologi och intern länkning till katalogens böcker och ämnessidor.
+            Den här artikeln är en katalogtext från Örnflychts Förlag och Antikvariat. Texten är skriven för att ge tydlig
+            kontext, stabil terminologi och intern länkning till katalogens böcker.
           </p>
           <h2 className="font-serif text-3xl text-ink dark:text-ivory">Sammanhang</h2>
           <p>
@@ -75,8 +74,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </p>
           <h2 className="font-serif text-3xl text-ink dark:text-ivory">Fortsatt läsning</h2>
           <p>
-            Läsaren kan gå vidare till relaterade ämnen i kunskapsbanken eller till böcker där materialet utvecklas i
-            längre form.
+            Läsaren kan gå vidare till böcker där materialet utvecklas i längre form.
           </p>
         </div>
 
@@ -85,11 +83,6 @@ export default async function ArticlePage({ params }: PageProps) {
             Relaterat
           </h2>
           <div className="mt-5 grid gap-3">
-            {relatedTopics.map((topic) => (
-              <Link key={topic.slug} href={`/kunskapsbank/${topic.slug}`} className="card p-4">
-                {topic.title}
-              </Link>
-            ))}
             {relatedBooks.map((book) => (
               <Link key={book.slug} href={`/bocker/${book.slug}`} className="card p-4">
                 {book.title}

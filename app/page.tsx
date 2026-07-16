@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BookCard } from "@/components/BookCard";
 import { JsonLd } from "@/components/JsonLd";
 import { SearchPanel, type SearchItem } from "@/components/SearchPanel";
-import { articles, books, site, topics } from "@/lib/content";
+import { articles, books, site } from "@/lib/content";
 import { breadcrumbJsonLd, faqJsonLd, websiteJsonLd } from "@/lib/seo";
 
 const searchItems: SearchItem[] = [
@@ -18,12 +18,6 @@ const searchItems: SearchItem[] = [
     description: article.excerpt,
     href: `/artiklar/${article.slug}`,
     type: "Artikel"
-  })),
-  ...topics.map((topic) => ({
-    title: topic.title,
-    description: topic.summary,
-    href: `/kunskapsbank/${topic.slug}`,
-    type: "Ämne"
   }))
 ];
 
@@ -94,7 +88,7 @@ export default function HomePage() {
             <p>
               Örnflychts Förlag och Antikvariat samlar egen utgivning med ett växande urval av antikvariska och
               kurerade böcker inom Roslagen, mat, politik och trädgård.
-              Katalogen ska vara liten nog att vara genomtänkt och tydlig nog att fungera som kunskapsbank över tid.
+              Katalogen ska vara liten nog att vara genomtänkt och tydlig nog att fungera som referens över tid.
             </p>
             <p>
               Kvalitet går före kvantitet. Egna titlar och äldre böcker väljs för sitt ämne,

@@ -2,7 +2,7 @@
 
 Webbplats för Örnflychts Förlag byggd i Next.js, TypeScript och Tailwind CSS.
 
-Sidan är byggd som en modern förlagssajt med bokbibliotek, artiklar, kunskapsbank, semantisk HTML, JSON-LD, Open Graph, sitemap och robots-fil.
+Sidan är byggd som en modern förlagssajt med bokkatalog, artiklar, semantisk HTML, JSON-LD, Open Graph, sitemap och robots-fil.
 
 ## Lokal utveckling
 

@@ -62,7 +62,7 @@ export function SearchPanel({ items }: { items: SearchItem[] }) {
               ))}
               {results.length === 0 ? (
                 <p className="border border-line p-5 text-sm text-ink/70 dark:border-white/10 dark:text-ivory/70">
-                  Ingen träff. Prova ett bredare ämne eller gå via kunskapsbanken.
+                  Ingen träff. Prova ett bredare ämne eller gå via katalogen.
                 </p>
               ) : null}
             </div>
