@@ -87,8 +87,7 @@ export default function HomePage() {
           <div className="space-y-6 text-lg leading-9 text-ink/76 dark:text-ivory/76">
             <p>
               Örnflychts Förlag och Antikvariat samlar egen utgivning med ett växande urval av antikvariska och
-              kurerade böcker inom Roslagen, mat, politik och trädgård.
-              Katalogen ska vara liten nog att vara genomtänkt och tydlig nog att fungera som referens över tid.
+              kurerade böcker med fokus på Roslagen, mat, politik och trädgård.
             </p>
             <p>
               Kvalitet går före kvantitet. Egna titlar och äldre böcker väljs för sitt ämne,
@@ -96,8 +95,7 @@ export default function HomePage() {
             </p>
             <p>
               Namnet Örnflycht har valts för att hedra en dokumenterad gren i grundarens släkthistoria och den
-              kulturhistoriska tradition som den representerar. Det ska inte förstås som ett adligt projekt eller som
-              ett anspråk på en historisk ätt.
+              kulturhistoriska tradition som den representerar.
             </p>
           </div>
         </div>
