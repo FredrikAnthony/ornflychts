@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   },
   description: site.description,
   icons: {
-    icon: "/assets/ornflychts-icon.svg",
-    shortcut: "/assets/ornflychts-icon.svg",
-    apple: "/assets/ornflychts-icon.svg"
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg"
   },
   openGraph: {
     title: site.name,
