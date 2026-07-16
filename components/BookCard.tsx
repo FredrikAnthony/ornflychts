@@ -20,6 +20,9 @@ export function BookCard({ book }: { book: Book }) {
         <p className="mt-2 text-sm text-ink/78 dark:text-ivory/78">{book.pages}{book.edition ? ` · ${book.edition}` : ""}</p>
         {book.price ? <p className="mt-2 text-sm font-semibold text-ink dark:text-ivory">{book.price}</p> : null}
         {book.availabilityNote ? <p className="mt-2 text-sm font-semibold text-forest dark:text-brass">{book.availabilityNote}</p> : null}
+        {book.category === "Antikvariat" ? (
+          <p className="mt-2 text-sm text-ink/62 dark:text-ivory/62">Antikvariskt exemplar med lässlitage.</p>
+        ) : null}
         <div className="mt-5 flex flex-wrap gap-3">
           <Link href={`/bocker/${book.slug}`} className="link-button">Läs mer</Link>
           {book.priceSek ? <AddToCartButton slug={book.slug} label="Köp" /> : <a href={book.buyUrl} className="link-button-solid">Beställ</a>}

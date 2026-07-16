@@ -105,6 +105,12 @@ export default async function BookPage({ params }: PageProps) {
                 <dt className="text-ink/52 dark:text-ivory/52">Status</dt>
                 <dd className="mt-1 text-ink dark:text-ivory">{book.status === "available" ? "Beställningsbar" : book.status}</dd>
               </div>
+              {book.category === "Antikvariat" ? (
+                <div>
+                  <dt className="text-ink/52 dark:text-ivory/52">Skick</dt>
+                  <dd className="mt-1 text-ink dark:text-ivory">Antikvariskt exemplar med lässlitage. Boken har varit läst.</dd>
+                </div>
+              ) : null}
               {book.design ? (
                 <div>
                   <dt className="text-ink/52 dark:text-ivory/52">Form</dt>
