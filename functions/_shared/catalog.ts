@@ -3,6 +3,71 @@ export const products = [
     slug: "hannas-hus",
     title: "Hannas hus",
     priceSek: 299
+  },
+  {
+    slug: "smak-av-svunnen-tid",
+    title: "Smak av svunnen tid",
+    priceSek: 80
+  },
+  {
+    slug: "bockernas-mat",
+    title: "Böckernas mat",
+    priceSek: 75
+  },
+  {
+    slug: "masken-ur-rosen",
+    title: "Masken ur rosen",
+    priceSek: 60
+  },
+  {
+    slug: "hinna-bjork-drommen-om-det-roda",
+    title: "Drömmen om det röda",
+    priceSek: 70
+  },
+  {
+    slug: "tisdagar-med-tofflorna",
+    title: "Tisdagar med tofflorna",
+    priceSek: 45
+  },
+  {
+    slug: "roslagen",
+    title: "Roslagen",
+    priceSek: 95
+  },
+  {
+    slug: "till-bords-hos-monet",
+    title: "Till bords hos Monet",
+    priceSek: 80
+  },
+  {
+    slug: "kockarnas-kokbok",
+    title: "Kockarnas kokbok",
+    priceSek: 65
+  },
+  {
+    slug: "slaktforska-steg-for-steg",
+    title: "Släktforska steg för steg",
+    priceSek: 60
+  },
+  {
+    slug: "bordets-frojder",
+    title: "Bordets fröjder",
+    priceSek: 90
+  },
+  {
+    slug: "krogliv",
+    title: "Krogliv",
+    priceSek: 45
+  },
+  {
+    slug: "muramaris-en-karlekshistoria",
+    title: "Muramaris: en kärlekshistoria",
+    priceSek: 70
+  },
+  {
+    slug: "tradgardens-blommor",
+    title: "Trädgårdens blommor",
+    priceSek: 50
   }
 ];
 
