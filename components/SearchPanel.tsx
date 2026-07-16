@@ -29,10 +29,10 @@ export function SearchPanel({ items }: { items: SearchItem[] }) {
           <div>
             <p className="kicker">Sökfunktion</p>
             <h2 id="sok" className="mt-3 font-serif text-3xl text-ink dark:text-ivory md:text-4xl">
-              Sök i böcker, artiklar och ämnen
+              Sök i katalog, artiklar och ämnen
             </h2>
             <p className="mt-4 max-w-xl text-base leading-8 text-ink/72 dark:text-ivory/72">
-              Sökningen är lokal och snabb. Den är byggd för att göra förlagets kunskapsstruktur tydlig även utan ett separat CMS.
+              Sökningen är lokal och snabb. Den är byggd för att göra katalogens kunskapsstruktur tydlig även utan ett separat CMS.
             </p>
           </div>
           <div>

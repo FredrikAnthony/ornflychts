@@ -39,9 +39,9 @@ export default function HomePage() {
       <JsonLd
         data={faqJsonLd([
           {
-            question: "Vad ger Örnflychts Förlag ut?",
+            question: "Vad är Örnflychts Förlag och Antikvariat?",
             answer:
-              "Förlaget ger ut böcker, pamfletter och artiklar om lokalhistoria, kulturhistoria, konsthistoria, essäer, dokumentation och forskning."
+              "Örnflychts är både ett litet förlag och ett antikvariat med egen utgivning, äldre titlar och kurerade böcker inom lokalhistoria, kulturhistoria, konsthistoria, essäer, dokumentation och forskning."
           },
           {
             question: "Varför heter förlaget Örnflychts Förlag?",
@@ -63,16 +63,16 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-paper via-paper/78 to-paper/10 dark:from-ink dark:via-ink/82 dark:to-ink/15" />
         <div className="relative mx-auto flex min-h-[86vh] max-w-page items-center px-5 py-24 lg:px-8">
           <div className="max-w-3xl">
-            <p className="eyebrow">Etablerat för långsam läsning</p>
+            <p className="eyebrow">Förlag och antikvariat</p>
             <h1 className="mt-7 font-serif text-6xl leading-[0.95] tracking-tight text-ink dark:text-ivory md:text-8xl">
               Örnflychts Förlag
             </h1>
             <p className="mt-7 max-w-xl text-xl italic leading-9 text-ink/78 dark:text-ivory/78">
-              Böcker om historia, kulturarv och samtida kultur.
+              Egen utgivning och utvalda böcker om historia, kulturarv och konsthistoria.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/bocker" className="link-button-solid">
-                Utforska böcker
+                Utforska katalogen
               </Link>
               <Link href="#forlaget" className="link-button">
                 Om förlaget
@@ -85,20 +85,20 @@ export default function HomePage() {
       <section id="forlaget" className="section">
         <div className="mx-auto grid max-w-page gap-14 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
-            <p className="eyebrow">Om förlaget</p>
+            <p className="eyebrow">Om förlaget och antikvariatet</p>
             <h2 className="mt-5 font-serif text-4xl leading-tight text-ink dark:text-ivory md:text-5xl">
-              Smal utgivning med arkiv, plats och blick för samtiden.
+              En liten katalog med egen utgivning och utvalda äldre titlar.
             </h2>
           </div>
           <div className="space-y-6 text-lg leading-9 text-ink/76 dark:text-ivory/76">
             <p>
-              Örnflychts Förlag publicerar lokalhistoria, kulturhistoria, konsthistoria, essäer,
-              dokumentation och forskning. Utgivningen ska vara liten nog att vara noggrant redigerad och tydlig nog
-              att fungera som kunskapsbank över tid.
+              Örnflychts Förlag och Antikvariat samlar egen utgivning med ett växande urval av antikvariska och
+              kurerade böcker inom lokalhistoria, kulturhistoria, konsthistoria, essäer, dokumentation och forskning.
+              Katalogen ska vara liten nog att vara genomtänkt och tydlig nog att fungera som kunskapsbank över tid.
             </p>
             <p>
-              Kvalitet går före kvantitet. Varje titel ska kunna bära sitt ämne med saklighet, god form och respekt för
-              källor, läsare och de miljöer som skildras.
+              Kvalitet går före kvantitet. Egna titlar, äldre böcker och enstaka pamfletter väljs för sitt ämne,
+              sitt källvärde och sin förmåga att fördjupa en läsning av plats, konst och kulturarv.
             </p>
             <p>
               Namnet Örnflycht har valts för att hedra en dokumenterad gren i grundarens släkthistoria och den
@@ -115,17 +115,38 @@ export default function HomePage() {
             <div>
               <p className="eyebrow">Böcker</p>
               <h2 id="bocker" className="mt-5 font-serif text-4xl text-ink dark:text-ivory md:text-5xl">
-                Utgivning
+                Katalog
               </h2>
             </div>
             <Link href="/bocker" className="link-button">
-              Hela bokbiblioteket
+              Hela katalogen
             </Link>
           </div>
           <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {books.map((book) => (
               <BookCard key={book.slug} book={book} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="antikvariat" className="section" aria-labelledby="antikvariat-rubrik">
+        <div className="mx-auto grid max-w-page gap-14 px-5 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+          <div>
+            <p className="eyebrow">Antikvariat</p>
+            <h2 id="antikvariat-rubrik" className="mt-5 font-serif text-4xl text-ink dark:text-ivory md:text-5xl">
+              Utvalda exemplar, inte masslager.
+            </h2>
+          </div>
+          <div className="grid gap-5 text-lg leading-9 text-ink/76 dark:text-ivory/76">
+            <p>
+              Antikvariatsdelen är tänkt som ett långsamt växande urval av äldre böcker, småtryck och häften med
+              anknytning till förlagets ämnen. Fokus ligger på relevans, skick och sammanhang snarare än volym.
+            </p>
+            <p>
+              När antikvariska titlar läggs till presenteras de i samma katalog som förlagets egna böcker, med tydlig
+              beskrivning, pris och beställningsväg.
+            </p>
           </div>
         </div>
       </section>
@@ -144,8 +165,8 @@ export default function HomePage() {
               dokumentation. Hon är även keramiker och lärare inom psykologi.
             </p>
             <p>
-              Förlagets ton ska vara saklig, omsorgsfull och långsiktig. Det är utgivningen, ämnena och källarbetet
-              som står i centrum.
+              Förlagets och antikvariatets ton ska vara saklig, omsorgsfull och långsiktig. Det är katalogen, ämnena
+              och källarbetet som står i centrum.
             </p>
           </div>
         </div>

@@ -3,10 +3,10 @@ import { ThemeToggle } from "./ThemeToggle";
 import { CartHeaderLink } from "./CartHeaderLink";
 
 const nav = [
-  ["Böcker", "/bocker"],
+  ["Katalog", "/bocker"],
+  ["Antikvariat", "/#antikvariat"],
   ["Artiklar", "/artiklar"],
   ["Kunskapsbank", "/kunskapsbank"],
-  ["Förlaget", "/#forlaget"],
   ["Kontakt", "/kontakt"]
 ];
 
@@ -18,7 +18,7 @@ export function Header() {
           <span className="block font-serif text-2xl tracking-tight text-ink dark:text-ivory">Örnflychts Förlag</span>
           <span className="mt-1.5 flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.3em] text-moss dark:text-brass">
             <span className="h-px w-4 bg-current" aria-hidden="true" />
-            Historia och kulturarv
+            Förlag och antikvariat
           </span>
         </Link>
         <div className="flex items-center gap-6">

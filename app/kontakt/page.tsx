@@ -6,10 +6,10 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Kontakt",
-  description: "Kontaktinformation för Örnflychts Förlag.",
+  description: "Kontaktinformation för Örnflychts Förlag och Antikvariat.",
   openGraph: {
     title: `Kontakt | ${site.name}`,
-    description: "Kontaktinformation för Örnflychts Förlag.",
+    description: "Kontaktinformation för Örnflychts Förlag och Antikvariat.",
     url: `${site.url}/kontakt`
   }
 };
@@ -27,9 +27,9 @@ export default function ContactPage() {
         <Breadcrumbs items={[{ label: "Kontakt" }]} />
         <header className="mt-10">
           <p className="eyebrow">Kontakt</p>
-          <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Örnflychts Förlag</h1>
+          <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Örnflychts Förlag och Antikvariat</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
-            För beställningar, återförsäljare, press och frågor om utgivningen.
+            För beställningar, antikvariska förfrågningar, återförsäljare, press och frågor om katalogen.
           </p>
         </header>
         <div className="card mt-10 p-8">
@@ -38,7 +38,7 @@ export default function ContactPage() {
             info@ornflychts.se
           </a>
           <p className="mt-6 text-sm leading-7 text-ink/68 dark:text-ivory/68">
-            Swish och fraktvillkor kan kopplas till respektive bok när betalningsflödet är färdigställt.
+            Mejla gärna om en antikvarisk titel, ett ämnesområde eller en beställning kräver särskild hantering.
           </p>
         </div>
       </div>

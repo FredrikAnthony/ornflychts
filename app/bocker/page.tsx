@@ -7,10 +7,10 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Böcker",
-  description: "Bokbibliotek från Örnflychts Förlag med lokalhistoria, kulturhistoria, konsthistoria och essäer.",
+  description: "Katalog från Örnflychts Förlag och Antikvariat med egen utgivning och utvalda böcker inom lokalhistoria, kulturhistoria, konsthistoria och essäer.",
   openGraph: {
     title: `Böcker | ${site.name}`,
-    description: "Utforska utgivningen från Örnflychts Förlag.",
+    description: "Utforska katalogen från Örnflychts Förlag och Antikvariat.",
     url: `${site.url}/bocker`
   }
 };
@@ -27,11 +27,12 @@ export default function BooksPage() {
       <div className="mx-auto max-w-page px-5 lg:px-8">
         <Breadcrumbs items={[{ label: "Böcker" }]} />
         <header className="mt-10 max-w-3xl">
-          <p className="eyebrow">Bokbibliotek</p>
-          <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Böcker att beställa</h1>
+          <p className="eyebrow">Katalog</p>
+          <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Böcker och antikvariat</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
-            Utgivningen samlar lokalhistoria, kulturhistoria, konsthistoria, essäer och dokumentation.
-            Varje titel presenteras med omslag, metadata, provläsning och köpväg.
+            Katalogen samlar egen utgivning, äldre titlar, pamfletter och kurerade böcker inom lokalhistoria,
+            kulturhistoria, konsthistoria, essäer och dokumentation. Varje titel presenteras med omslag, metadata och
+            beställningsväg.
           </p>
         </header>
         <div className="mt-14 grid gap-11 sm:grid-cols-2 lg:grid-cols-4">

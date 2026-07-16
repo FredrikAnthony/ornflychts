@@ -9,7 +9,7 @@ html {
 body {
   background: #f6f1e7;
   color: #11130f;
-  font-family: var(--font-sans, Inter, ui-sans-serif, system-ui, sans-serif);
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Arial, sans-serif;
 }
 
 .dark body {

@@ -7,10 +7,10 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Kunskapsbank",
-  description: "Ämnessidor från Örnflychts Förlag om Hanna Lindh, Norrtälje, Roslagen, byggnadshistoria och konsthistoria.",
+  description: "Ämnessidor från Örnflychts Förlag och Antikvariat om Hanna Lindh, Norrtälje, Roslagen, byggnadshistoria och konsthistoria.",
   openGraph: {
     title: `Kunskapsbank | ${site.name}`,
-    description: "Ämnessidor och faktastruktur från Örnflychts Förlag.",
+    description: "Ämnessidor och faktastruktur från Örnflychts Förlag och Antikvariat.",
     url: `${site.url}/kunskapsbank`
   }
 };
@@ -30,8 +30,8 @@ export default function KnowledgePage() {
           <p className="eyebrow">Kunskapsbank</p>
           <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Ämnessidor</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
-            Kunskapsbanken samlar centrala personer, platser och begrepp i förlagets utgivning. Sidorna är skrivna med
-            tydliga rubriker, korta stycken och intern länkning.
+            Kunskapsbanken samlar centrala personer, platser och begrepp i katalogen. Sidorna är skrivna med tydliga
+            rubriker, korta stycken och intern länkning.
           </p>
         </header>
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

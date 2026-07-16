@@ -15,8 +15,8 @@ const config: Config = {
         line: "#d8cdbb"
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "Georgia", "serif"],
-        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"]
+        serif: ["Georgia", "Times New Roman", "serif"],
+        sans: ["ui-sans-serif", "system-ui", "Segoe UI", "Arial", "sans-serif"]
       },
       maxWidth: {
         page: "1180px"

@@ -69,7 +69,7 @@ export default async function BookPage({ params }: PageProps) {
         ])}
       />
       <div className="mx-auto max-w-page px-5 lg:px-8">
-        <Breadcrumbs items={[{ label: "Böcker", href: "/bocker" }, { label: book.title }]} />
+        <Breadcrumbs items={[{ label: "Katalog", href: "/bocker" }, { label: book.title }]} />
         <article className="mt-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="border border-line bg-ivory p-8 dark:border-white/10 dark:bg-white/5">
             <Image

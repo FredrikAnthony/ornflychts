@@ -65,13 +65,13 @@ export default async function ArticlePage({ params }: PageProps) {
 
         <div className="mt-12 space-y-7 text-lg leading-9 text-ink/76 dark:text-ivory/76">
           <p>
-            Den här artikeln är en ämnesingång i Örnflychts Förlags kunskapsbank. Texten är skriven för att ge tydlig
-            kontext, stabil terminologi och intern länkning till förlagets böcker och ämnessidor.
+            Den här artikeln är en ämnesingång i Örnflychts kunskapsbank. Texten är skriven för att ge tydlig kontext,
+            stabil terminologi och intern länkning till katalogens böcker och ämnessidor.
           </p>
           <h2 className="font-serif text-3xl text-ink dark:text-ivory">Sammanhang</h2>
           <p>
             {article.excerpt} Ämnet behandlas med fokus på källor, plats, dokumentation och de frågor som återkommer i
-            förlagets utgivning.
+            katalogen.
           </p>
           <h2 className="font-serif text-3xl text-ink dark:text-ivory">Fortsatt läsning</h2>
           <p>

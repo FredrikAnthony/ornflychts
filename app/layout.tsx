@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Newsreader, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,21 +7,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { organizationJsonLd } from "@/lib/seo";
 import { site } from "@/lib/content";
 import { CartProvider } from "@/components/CartProvider";
-
-const serif = Newsreader({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600"],
-  display: "swap"
-});
-
-const sans = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["400", "500", "600"],
-  display: "swap"
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -50,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="sv" suppressHydrationWarning className={`${serif.variable} ${sans.variable}`}>
+    <html lang="sv" suppressHydrationWarning>
       <body className="bg-paper text-ink antialiased dark:bg-ink dark:text-ivory">
         <CartProvider>
           <JsonLd data={organizationJsonLd()} />

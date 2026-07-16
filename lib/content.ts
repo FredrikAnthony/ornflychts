@@ -40,7 +40,7 @@ export type Topic = {
 export const site = {
   name: "Örnflychts Förlag",
   url: "https://ornflychts.se",
-  description: "Böcker om historia, kulturarv och samtida kultur.",
+  description: "Förlag och antikvariat med böcker om historia, kulturarv och konsthistoria.",
   founder: "Annika Thorin"
 };
 
@@ -161,7 +161,7 @@ export const topics: Topic[] = [
   {
     slug: "hanna-lindh",
     title: "Hanna Lindh",
-    summary: "Personen bakom Pensionat Granparken och den första större titeln från förlaget.",
+    summary: "Personen bakom Pensionat Granparken och en central titel i förlagets katalog.",
     facts: ["Kopplad till Norrtäljes badorts- och pensionatshistoria.", "Central för boken Hannas hus."],
     related: ["norrtalje", "roslagens-historia"]
   },

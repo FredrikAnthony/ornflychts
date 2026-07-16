@@ -30,7 +30,7 @@ export default function ArticlesPage() {
           <p className="eyebrow">Artikelbibliotek</p>
           <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Artiklar</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
-            Artiklarna ger sökbar kontext till böckerna, ämnena och förlagets arbetssätt. Varje artikel har metadata,
+            Artiklarna ger sökbar kontext till katalogen, ämnena och förlagets arbetssätt. Varje artikel har metadata,
             författare, publiceringsdatum och relaterade ämnen.
           </p>
         </header>

@@ -36,7 +36,7 @@ export function CartPageClient() {
       <div className="card mt-10 p-8">
         <p className="text-lg text-ink/74 dark:text-ivory/74">Varukorgen är tom.</p>
         <Link href="/bocker" className="link-button mt-6">
-          Utforska böcker
+          Utforska katalogen
         </Link>
       </div>
     );
