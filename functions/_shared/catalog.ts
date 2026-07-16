@@ -20,7 +20,7 @@ export const products = [
     priceSek: 60
   },
   {
-    slug: "hinna-bjork-drommen-om-det-roda",
+    slug: "nina-bjork-drommen-om-det-roda",
     title: "Drömmen om det röda",
     priceSek: 70
   },

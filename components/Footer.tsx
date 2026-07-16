@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-page gap-10 px-5 py-16 md:grid-cols-[1.3fr_1fr_1fr] lg:px-8">
         <div>
           <p className="font-serif text-3xl tracking-tight text-ink dark:text-ivory">Örnflychts Förlag</p>
-          <p className="mt-4 max-w-sm leading-7">Förlag och antikvariat för historia, kulturarv och konsthistoria. Kvalitet framför kvantitet.</p>
+          <p className="mt-4 max-w-sm leading-7">Förlag och antikvariat för Roslagen, mat, politik och trädgård. Kvalitet framför kvantitet.</p>
           <a href="mailto:info@ornflychts.se" className="mt-5 inline-block text-sm font-semibold text-forest transition hover:text-brass dark:text-brass dark:hover:text-ivory">
             info@ornflychts.se
           </a>

@@ -40,7 +40,7 @@ export type Topic = {
 export const site = {
   name: "Örnflychts Förlag",
   url: "https://ornflychts.se",
-  description: "Förlag och antikvariat med böcker om historia, kulturarv och konsthistoria.",
+  description: "Förlag och antikvariat med böcker om Roslagen, mat, politik och trädgård.",
   founder: "Annika Thorin"
 };
 
@@ -83,44 +83,7 @@ export const books: Book[] = [
       "En bok som prövar hur offentliga bilduttryck kan förstås bortom kronologi och geografi. Utgångspunkten är det okända: ett icke-rumsligt fenomen, inte historiserat och inte låst vid stad eller land.",
     buyUrl: "https://cargocollective.com/FredrikAnthony/Not-Street-Art",
     reviews: ["Ett koncentrerat bidrag till diskussionen om bildkultur, rum och historieskrivning."],
-    subjects: ["konsthistoria", "samtida kultur", "offentlighet"]
-  },
-  {
-    slug: "efterblivelser",
-    title: "Efterblivelser",
-    subtitle: "Nya reflektioner, nya fotografier",
-    category: "Konstessä",
-    year: "Sommaren 2014",
-    isbn: "978-91-981103-1-9",
-    pages: "40 sidor",
-    edition: "100 exemplar",
-    design: "Tobias Lund",
-    status: "available",
-    image: "/assets/efterblivelser.jpg",
-    description:
-      "En essä om de estetiska rester som uppstår i auktionsmiljöer: objekt utan prislapp eller upphovsperson, och de reflektioner som växer fram genom det ofullkomliga.",
-    buyUrl: "https://cargocollective.com/FredrikAnthony/Efterblivelser-1",
-    reviews: ["En kort och tät reflektion om värde, rest och konstvärldens blick."],
-    subjects: ["konst", "dokumentation", "essä", "auktionsmiljö"]
-  },
-  {
-    slug: "en-akademisk-homerun",
-    title: "En akademisk homerun",
-    subtitle: "En ny reflektion på konstverket Terrakotta",
-    category: "Konst och forskning",
-    year: "Sommaren 2013",
-    isbn: "978-91-981103-0-2",
-    pages: "14 sidor",
-    edition: "100 exemplar",
-    design: "Tobias Lund",
-    status: "available",
-    image: "/assets/en-akademisk-homerun.jpg",
-    description:
-      "En performativ tolkning av Marianne och Sivert Lindbloms landskapsbaserade konstverk Terracotta vid Stockholms universitet.",
-    buyUrl: "https://cargocollective.com/FredrikAnthony/En-akademisk-homerun",
-    sampleUrl: "http://libris.kb.se/bib/14810085",
-    reviews: ["Ett avgränsat konst- och forskningsspår i pamflettform."],
-    subjects: ["konsthistoria", "forskning", "Stockholms universitet", "Terracotta"]
+    subjects: ["konsthistoria", "offentlighet", "kulturhistoria"]
   },
   {
     slug: "smak-av-svunnen-tid",
@@ -174,9 +137,9 @@ export const books: Book[] = [
     subjects: ["kulturhistoria", "idéhistoria", "samhälle"]
   },
   {
-    slug: "hinna-bjork-drommen-om-det-roda",
+    slug: "nina-bjork-drommen-om-det-roda",
     title: "Drömmen om det röda",
-    subtitle: "Hinna Björk om Rosa Luxemburg",
+    subtitle: "Nina Björk om Rosa Luxemburg",
     category: "Antikvariat",
     year: "Antikvariat",
     isbn: "Ej angivet",
@@ -184,7 +147,7 @@ export const books: Book[] = [
     status: "available",
     price: "70 kr",
     priceSek: 70,
-    image: "/assets/antikvariat/hinna-bjork-drommen-om-det-roda.jpg",
+    image: "/assets/antikvariat/nina-bjork-drommen-om-det-roda.jpg",
     description: "Antikvarisk bok om Rosa Luxemburg, socialism, språk och kärlek.",
     buyUrl: "/kontakt",
     reviews: ["Utvald antikvarisk titel i katalogen."],
@@ -360,7 +323,7 @@ export const articles: Article[] = [
     slug: "konsthistoria-som-kunskapsfalt",
     title: "Konsthistoria som kunskapsfält",
     excerpt:
-      "Konsthistoriskt material behandlas här som dokumentation, samtidskultur och källa.",
+      "Konsthistoriskt material behandlas här som dokumentation, kulturhistoria och källa.",
     author: "Örnflychts Förlag",
     date: "2026-07-05",
     category: "Konst",

@@ -41,7 +41,7 @@ export default function HomePage() {
           {
             question: "Vad är Örnflychts Förlag och Antikvariat?",
             answer:
-              "Örnflychts är både ett litet förlag och ett antikvariat med egen utgivning, äldre titlar och kurerade böcker inom lokalhistoria, kulturhistoria, konsthistoria, essäer, dokumentation och forskning."
+              "Örnflychts är både ett litet förlag och ett antikvariat med egen utgivning, äldre titlar och kurerade böcker inom Roslagen, mat, politik och trädgård."
           },
           {
             question: "Varför heter förlaget Örnflychts Förlag?",
@@ -68,7 +68,7 @@ export default function HomePage() {
               Örnflychts Förlag
             </h1>
             <p className="mt-7 max-w-xl text-xl italic leading-9 text-ink/78 dark:text-ivory/78">
-              Egen utgivning och utvalda böcker om historia, kulturarv och konsthistoria.
+              Egen utgivning och utvalda böcker om Roslagen, mat, politik och trädgård.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/bocker" className="link-button-solid">
@@ -93,12 +93,12 @@ export default function HomePage() {
           <div className="space-y-6 text-lg leading-9 text-ink/76 dark:text-ivory/76">
             <p>
               Örnflychts Förlag och Antikvariat samlar egen utgivning med ett växande urval av antikvariska och
-              kurerade böcker inom lokalhistoria, kulturhistoria, konsthistoria, essäer, dokumentation och forskning.
+              kurerade böcker inom Roslagen, mat, politik och trädgård.
               Katalogen ska vara liten nog att vara genomtänkt och tydlig nog att fungera som kunskapsbank över tid.
             </p>
             <p>
-              Kvalitet går före kvantitet. Egna titlar, äldre böcker och enstaka pamfletter väljs för sitt ämne,
-              sitt källvärde och sin förmåga att fördjupa en läsning av plats, konst och kulturarv.
+              Kvalitet går före kvantitet. Egna titlar och äldre böcker väljs för sitt ämne,
+              sitt källvärde och sin förmåga att fördjupa en läsning av plats, vardagskultur och kulturarv.
             </p>
             <p>
               Namnet Örnflycht har valts för att hedra en dokumenterad gren i grundarens släkthistoria och den
@@ -140,8 +140,8 @@ export default function HomePage() {
           </div>
           <div className="grid gap-5 text-lg leading-9 text-ink/76 dark:text-ivory/76">
             <p>
-              Antikvariatsdelen är tänkt som ett långsamt växande urval av äldre böcker, småtryck och häften med
-              anknytning till förlagets ämnen. Fokus ligger på relevans, skick och sammanhang snarare än volym.
+              Antikvariatsdelen är tänkt som ett långsamt växande urval av äldre böcker om Roslagen, mat, politik och
+              trädgård. Fokus ligger på relevans, skick och sammanhang snarare än volym.
             </p>
             <p>
               När antikvariska titlar läggs till presenteras de i samma katalog som förlagets egna böcker, med tydlig
