@@ -156,8 +156,9 @@ export default function HomePage() {
           </div>
           <div className="space-y-5 text-lg leading-9 text-ink/76 dark:text-ivory/76">
             <p>
-              Annika Thorin arbetar med kulturhistoriska frågor och skriver med intresse för plats, minne och
-              dokumentation. Hon är även keramiker och lärare inom psykologi.
+              Annika Thorin är utbildad psykologilärare och arbetar idag som terapeut. Hon har tidigare intresserat sig
+              för måleri och keramik, och hennes arbete med förlaget rör sig nära frågor om plats, minne och
+              dokumentation.
             </p>
             <p>
               Förlagets och antikvariatets ton ska vara saklig, omsorgsfull och långsiktig. Det är katalogen, ämnena
