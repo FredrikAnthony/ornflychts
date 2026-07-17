@@ -48,7 +48,7 @@ export function BookCard({ book }: { book: Book }) {
             Antikvariskt exemplar med lässlitage.
           </p>
         ) : null}
-        <div className="mt-5 flex flex-wrap gap-3 pt-2">
+        <div className="mt-5 flex flex-wrap items-center gap-3 pt-2">
           <Link href={`/bocker/${book.slug}`} className="link-button">
             Läs mer
           </Link>

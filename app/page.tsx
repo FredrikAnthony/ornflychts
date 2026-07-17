@@ -40,7 +40,7 @@ export default function HomePage() {
           {
             question: "Varför heter förlaget Örnflychts Förlag?",
             answer:
-              "Namnet har valts för att hedra en dokumenterad gren i grundarens släkthistoria och den kulturhistoriska tradition som den representerar. Det är inte ett adligt projekt eller ett anspråk på en historisk ätt."
+              "Namnet har valts för att hedra en dokumenterad gren i grundarens släkthistoria. Det är inte ett adligt projekt eller ett [...]"
           }
         ])}
       />
@@ -94,8 +94,7 @@ export default function HomePage() {
               sitt källvärde och sin förmåga att fördjupa en läsning av plats, vardagskultur och kulturarv.
             </p>
             <p>
-              Namnet Örnflycht har valts för att hedra en dokumenterad gren i grundarens släkthistoria och den
-              kulturhistoriska tradition som den representerar.
+              Namnet Örnflycht har valts för att hedra en dokumenterad gren i grundarens släkthistoria.
             </p>
           </div>
         </div>

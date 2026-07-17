@@ -46,8 +46,7 @@ export function Footer() {
         <div className="animate-fade-in-up">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brass/90">Om namnet</p>
           <p className="mt-4 leading-7 text-ink/70 dark:text-ivory/70">
-            Namnet Örnflycht hedrar en dokumenterad gren i grundarens släkthistoria och den kulturhistoriska tradition
-            som den representerar.
+            Namnet Örnflycht hedrar en dokumenterad gren i grundarens släkthistoria.
           </p>
         </div>
       </div>
