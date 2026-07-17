@@ -58,11 +58,17 @@ export function faqJsonLd(items: Array<{ question: string; answer: string }>) {
   };
 }
 
-export function bookJsonLd(book: { title: string; isbn: string; description: string; image: string; buyUrl: string }) {
+export function bookJsonLd(book: { title: string; author?: string; isbn: string; description: string; image: string; buyUrl: string }) {
   return {
     "@context": "https://schema.org",
     "@type": "Book",
     name: book.title,
+    author: book.author
+      ? {
+          "@type": "Person",
+          name: book.author
+        }
+      : undefined,
     isbn: book.isbn.startsWith("978") ? book.isbn : undefined,
     description: book.description,
     image: `${site.url}${book.image}`,

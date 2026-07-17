@@ -89,6 +89,12 @@ export default async function BookPage({ params }: PageProps) {
             {book.authorNote ? <p className="mt-5 text-base leading-8 text-ink/68 dark:text-ivory/68">{book.authorNote}</p> : null}
 
             <dl className="mt-8 grid gap-4 border-y border-line py-6 text-sm dark:border-white/10 sm:grid-cols-2">
+              {book.author ? (
+                <div>
+                  <dt className="text-ink/52 dark:text-ivory/52">Författare</dt>
+                  <dd className="mt-1 text-ink dark:text-ivory">{book.author}</dd>
+                </div>
+              ) : null}
               <div>
                 <dt className="text-ink/52 dark:text-ivory/52">ISBN</dt>
                 <dd className="mt-1 text-ink dark:text-ivory">{book.isbn}</dd>

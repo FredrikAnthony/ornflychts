@@ -1,6 +1,7 @@
 export type Book = {
   slug: string;
   title: string;
+  author?: string;
   subtitle: string;
   category: string;
   year: string;
@@ -50,6 +51,7 @@ export const books: Book[] = [
   {
     slug: "hannas-hus",
     title: "Hannas hus",
+    author: "Fredrik Anthony",
     subtitle: "Ett pensionat för ideal och bildning",
     category: "Lokalhistoria",
     year: "2026",
@@ -62,7 +64,8 @@ export const books: Book[] = [
     image: "/assets/hannas-hus-framsida.jpg",
     description:
       "Berättelsen om Johanna \"Hanna\" Charlotta Lindh och Pensionat Granparken i Norrtälje. Boken rör sig genom lokalhistoria, bildning, socialt engagemang och ett hus som blev mötesplats.",
-    authorNote: "",
+    authorNote:
+      "Hannas hus är skriven av Fredrik Anthony, som arbetar med lokalhistoria, kulturarv och berättelser där arkivmaterial, plats och personliga spår möts.",
     buyUrl: "https://buy.stripe.com/8x2aEQaVd5Ci9iGaca9oc00?locale=sv",
     sampleUrl: "https://hannalindh.se",
     reviews: [
