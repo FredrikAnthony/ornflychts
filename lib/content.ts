@@ -9,6 +9,7 @@ export type Book = {
   pages: string;
   edition?: string;
   design?: string;
+  distribution?: string;
   status: "available" | "archive" | "forthcoming";
   price?: string;
   priceSek?: number;
@@ -57,10 +58,10 @@ export const books: Book[] = [
     year: "2026",
     isbn: "Kommer",
     pages: "Inbunden bok",
-    status: "available",
+    status: "forthcoming",
     price: "299 kr",
     priceSek: 299,
-    availabilityNote: "Finns snart till försäljning",
+    availabilityNote: "Ännu inte utgiven - förhandsboka och få boken skickad vid release.",
     image: "/assets/hannas-hus-framsida.jpg",
     description:
       "Berättelsen om Johanna \"Hanna\" Charlotta Lindh och Pensionat Granparken i Norrtälje. Boken rör sig genom lokalhistoria, bildning, socialt engagemang och ett hus som blev mötesplats.",
@@ -142,7 +143,10 @@ export const books: Book[] = [
     pages: "141 sidor",
     edition: "200 exemplar",
     design: "Tobias Lund",
+    distribution: "Moderna Museet, Nationalmuseum, Kulturhuset, Multikulturellt centrum, PaperCut m.fl.",
     status: "available",
+    price: "120 kr",
+    priceSek: 120,
     image: "/assets/not-street-art.jpg",
     description:
       "En bok som prövar hur offentliga bilduttryck kan förstås bortom kronologi och geografi. Utgångspunkten är det okända: ett icke-rumsligt fenomen, inte historiserat och inte låst vid stad eller land.",

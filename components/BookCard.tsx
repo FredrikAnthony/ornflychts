@@ -5,18 +5,17 @@ import { AddToCartButton } from "./AddToCartButton";
 
 export function BookCard({ book }: { book: Book }) {
   return (
-    <article className="group grid gap-6 animate-fade-in-up">
+    <article className="group grid gap-6">
       <Link
         href={`/bocker/${book.slug}`}
         className="card group/image relative grid min-h-[360px] place-items-center overflow-hidden p-6"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-brass/0 via-brass/0 to-brass/5 opacity-0 transition-opacity duration-300 group-hover/image:opacity-100" />
         <Image
           src={book.image}
           alt={`Omslag för ${book.title}`}
           width={520}
           height={640}
-          className="book-image relative max-h-[320px] w-auto object-contain shadow-lg transition-shadow duration-300 group-hover/image:shadow-2xl"
+          className="book-image relative max-h-[320px] w-auto object-contain shadow-lg"
         />
       </Link>
       <div className="space-y-3">
@@ -39,7 +38,7 @@ export function BookCard({ book }: { book: Book }) {
           <p className="text-sm font-semibold text-ink dark:text-ivory">{book.price}</p>
         ) : null}
         {book.availabilityNote ? (
-          <p className="text-sm font-semibold text-forest transition-colors duration-300 dark:text-brass">
+          <p className="text-sm font-semibold text-forest dark:text-brass">
             {book.availabilityNote}
           </p>
         ) : null}
@@ -53,7 +52,7 @@ export function BookCard({ book }: { book: Book }) {
             Läs mer
           </Link>
           {book.priceSek ? (
-            <AddToCartButton slug={book.slug} label="Köp" />
+            <AddToCartButton slug={book.slug} label={book.status === "forthcoming" ? "Förboka" : "Köp"} />
           ) : (
             <a href={book.buyUrl} className="link-button-solid">
               Beställ

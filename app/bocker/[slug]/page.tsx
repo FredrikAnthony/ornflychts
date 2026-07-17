@@ -4,12 +4,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
-import { books, site } from "@/lib/content";
+import { books, site, type Book } from "@/lib/content";
 import { bookJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { AddToCartButton, CartCheckoutLink } from "@/components/AddToCartButton";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
+};
+
+const statusLabels: Record<Book["status"], string> = {
+  available: "Beställningsbar",
+  forthcoming: "Förbokning öppen",
+  archive: "Arkiverad"
 };
 
 export function generateStaticParams() {
@@ -60,7 +66,7 @@ export default async function BookPage({ params }: PageProps) {
         data={faqJsonLd([
           {
             question: `Kan jag beställa ${book.title}?`,
-            answer: `${book.title} kan beställas via köpknappen på sidan. Status visas som ${book.status === "available" ? "beställningsbar" : book.status}.`
+            answer: `${book.title} kan beställas via köpknappen på sidan. Status visas som ${statusLabels[book.status].toLowerCase()}.`
           },
           {
             question: `Finns provläsning av ${book.title}?`,
@@ -113,7 +119,7 @@ export default async function BookPage({ params }: PageProps) {
               ) : null}
               <div>
                 <dt className="text-ink/52 dark:text-ivory/52">Status</dt>
-                <dd className="mt-1 text-ink dark:text-ivory">{book.status === "available" ? "Beställningsbar" : book.status}</dd>
+                <dd className="mt-1 text-ink dark:text-ivory">{statusLabels[book.status]}</dd>
               </div>
               {book.category === "Antikvariat" ? (
                 <div>
@@ -125,6 +131,12 @@ export default async function BookPage({ params }: PageProps) {
                 <div>
                   <dt className="text-ink/52 dark:text-ivory/52">Form</dt>
                   <dd className="mt-1 text-ink dark:text-ivory">{book.design}</dd>
+                </div>
+              ) : null}
+              {book.distribution ? (
+                <div className="sm:col-span-2">
+                  <dt className="text-ink/52 dark:text-ivory/52">Distribution</dt>
+                  <dd className="mt-1 text-ink dark:text-ivory">{book.distribution}</dd>
                 </div>
               ) : null}
               {book.price ? (
@@ -144,7 +156,7 @@ export default async function BookPage({ params }: PageProps) {
             <div className="mt-7 flex flex-wrap gap-3">
               {book.priceSek ? (
                 <>
-                  <AddToCartButton slug={book.slug} />
+                  <AddToCartButton slug={book.slug} label={book.status === "forthcoming" ? "Förboka" : "Lägg i varukorg"} />
                   <CartCheckoutLink />
                 </>
               ) : (

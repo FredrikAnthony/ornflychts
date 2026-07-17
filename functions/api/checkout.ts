@@ -39,8 +39,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   params.set("mode", "payment");
   params.set("success_url", `${siteUrl}/tack?session_id={CHECKOUT_SESSION_ID}`);
   params.set("cancel_url", `${siteUrl}/varukorg`);
-  params.set("payment_method_types[0]", "card");
-  params.set("payment_method_types[1]", "swish");
+  params.set("automatic_payment_methods[enabled]", "true");
   params.set("shipping_address_collection[allowed_countries][0]", "SE");
   params.set("metadata[source]", "ornflychts.se");
   if (body.email) params.set("customer_email", body.email);

@@ -1,23 +1,34 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Suspense } from "react";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ThankYouClient } from "@/components/ThankYouClient";
 
 export const metadata: Metadata = {
   title: "Tack för din beställning",
-  description: "Tack-sida efter beställning hos Örnflychts Förlag."
+  description: "Din beställning hos Örnflychts Förlag och Antikvariat är mottagen."
 };
 
 export default function ThankYouPage() {
   return (
     <main className="section">
       <div className="mx-auto max-w-3xl px-5 lg:px-8">
-        <p className="eyebrow">Beställning</p>
-        <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Tack för din beställning</h1>
-        <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
-          Betalningen registreras hos Stripe. Ett kvitto skickas till e-postadressen du angav i kassan.
-        </p>
-        <Link href="/bocker" className="link-button mt-8">
-          Tillbaka till böcker
-        </Link>
+        <Breadcrumbs items={[{ label: "Tack" }]} />
+        <header className="mt-10">
+          <p className="eyebrow">Beställning mottagen</p>
+          <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">
+            Tack för din beställning
+          </h1>
+          <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
+            Betalningen är genomförd och en bekräftelse skickas till din e-post inom kort. Hör av dig till{" "}
+            <a href="mailto:info@ornflychts.se" className="underline hover:text-brass">
+              info@ornflychts.se
+            </a>{" "}
+            om något är oklart med din order.
+          </p>
+        </header>
+        <Suspense fallback={null}>
+          <ThankYouClient />
+        </Suspense>
       </div>
     </main>
   );
