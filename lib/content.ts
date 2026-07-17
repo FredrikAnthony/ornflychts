@@ -62,8 +62,7 @@ export const books: Book[] = [
     image: "/assets/hannas-hus-framsida.jpg",
     description:
       "Berättelsen om Johanna \"Hanna\" Charlotta Lindh och Pensionat Granparken i Norrtälje. Boken rör sig genom lokalhistoria, bildning, socialt engagemang och ett hus som blev mötesplats.",
-    authorNote:
-      "Annika Thorin skriver med kulturhistorisk blick och förankring i plats, arkiv och familjehistoria.",
+    authorNote: "",
     buyUrl: "https://buy.stripe.com/8x2aEQaVd5Ci9iGaca9oc00?locale=sv",
     sampleUrl: "https://hannalindh.se",
     reviews: [
