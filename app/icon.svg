@@ -1,0 +1,31 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" fill="#f6f1e7" rx="8"/>
+  
+  <!-- Skugga bakgrund för djup -->
+  <rect x="8" y="8" width="48" height="48" fill="#11130f" rx="4" opacity="0.08"/>
+  
+  <!-- Vänster yttre vinge - stor och tydlig -->
+  <path fill="#16372d" d="M 8 32 Q 4 26 2 32 Q 4 38 8 36 Z" stroke="#11130f" stroke-width="0.5"/>
+  
+  <!-- Vänster inre vinge - större -->
+  <path fill="#4f6658" d="M 16 32 Q 10 22 8 32 Q 10 42 16 38 Z" stroke="#11130f" stroke-width="0.5"/>
+  
+  <!-- Bok i mitten - starkare -->
+  <rect x="25" y="19" width="14" height="26" fill="#11130f" rx="2" stroke="#a48243" stroke-width="1"/>
+  <line x1="25" y1="25" x2="39" y2="25" stroke="#a48243" stroke-width="2.5"/>
+  <line x1="25" y1="32" x2="39" y2="32" stroke="#a48243" stroke-width="2.5"/>
+  <line x1="25" y1="39" x2="39" y2="39" stroke="#a48243" stroke-width="2.5"/>
+  
+  <!-- Höger inre vinge - större -->
+  <path fill="#4f6658" d="M 48 32 Q 54 22 56 32 Q 54 42 48 38 Z" stroke="#11130f" stroke-width="0.5"/>
+  
+  <!-- Höger yttre vinge - stor och tydlig -->
+  <path fill="#16372d" d="M 56 32 Q 60 26 62 32 Q 60 38 56 36 Z" stroke="#11130f" stroke-width="0.5"/>
+  
+  <!-- Ansiktsdrag - starkare -->
+  <circle cx="28" cy="22" r="2" fill="#a48243"/>
+  <circle cx="36" cy="22" r="2" fill="#a48243"/>
+  
+  <!-- Liten detalj (näsa) -->
+  <path stroke="#a48243" stroke-width="1.5" fill="none" d="M 32 26 L 32 28" stroke-linecap="round"/>
+</svg>
