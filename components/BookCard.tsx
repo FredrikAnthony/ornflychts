@@ -49,13 +49,13 @@ export function BookCard({ book }: { book: Book }) {
           </p>
         ) : null}
         <div className="mt-5 flex flex-wrap gap-3 pt-2">
-          <Link href={`/bocker/${book.slug}`} className="inline-flex min-h-11 items-center justify-center gap-2 border border-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-forest transition duration-300 hover:bg-forest/5 dark:border-brass dark:text-brass dark:hover:bg-brass/10">
+          <Link href={`/bocker/${book.slug}`} className="link-button">
             Läs mer
           </Link>
           {book.priceSek ? (
             <AddToCartButton slug={book.slug} label="Köp" />
           ) : (
-            <a href={book.buyUrl} className="inline-flex min-h-11 items-center justify-center gap-2 border border-forest bg-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-ivory transition duration-300 hover:bg-forest/90 hover:shadow-lg dark:border-brass dark:bg-brass dark:text-ink dark:hover:bg-brass/90 dark:hover:shadow-lg">
+            <a href={book.buyUrl} className="link-button-solid">
               Beställ
             </a>
           )}
