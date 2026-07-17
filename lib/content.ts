@@ -96,7 +96,8 @@ export const books: Book[] = [
   {
     slug: "martin-luther-king",
     title: "Martin Luther King",
-    subtitle: "Biografi och politisk historia",
+    author: "Martin Luther King",
+    subtitle: "Självbiografi i urval, redigerad av Clayborne Carson",
     category: "Antikvariat",
     year: "Antikvariat",
     isbn: "Ej angivet",
@@ -105,9 +106,9 @@ export const books: Book[] = [
     price: "90 kr",
     priceSek: 90,
     image: "/assets/antikvariat/martin-luther-king.jpg",
-    description: "Antikvarisk bok om Martin Luther King, medborgarrättsrörelsen och politiskt ledarskap.",
+    description: "Antikvarisk bok med Martin Luther Kings egna texter om medborgarrättsrörelsen, demokrati och politiskt ledarskap.",
     authorNote:
-      "Författaruppgift saknas på den fotograferade framsidan, men boken presenteras här för sitt ämne: politik, demokrati och modern historia.",
+      "Boken bygger på Martin Luther Kings egna ord och är redigerad av historikern Clayborne Carson.",
     buyUrl: "/kontakt",
     reviews: ["Utvald antikvarisk titel i katalogen."],
     subjects: ["politik", "medborgarrätt", "historia"]
@@ -165,7 +166,7 @@ export const books: Book[] = [
     image: "/assets/antikvariat/smak-av-svunnen-tid.jpg",
     description: "Antikvarisk titel om mat, dryck och hushållskultur i Hallwylska palatset.",
     authorNote:
-      "Författaruppgift saknas i katalogunderlaget; boken väljs för sin koppling till måltidshistoria, hemkultur och Hallwylska miljön.",
+      "Boken ingår i katalogen för sin koppling till måltidshistoria, hemkultur och Hallwylska miljön.",
     buyUrl: "/kontakt",
     reviews: ["Utvald antikvarisk titel i katalogen."],
     subjects: ["matkultur", "kulturhistoria", "Hallwylska palatset"]
@@ -260,7 +261,7 @@ export const books: Book[] = [
     image: "/assets/antikvariat/roslagen.jpg",
     description: "Antikvarisk bok om Roslagen, kustlandskap och regional kulturhistoria.",
     authorNote:
-      "Författaruppgift saknas i katalogunderlaget; titeln ingår för sin tydliga anknytning till Roslagen och regional kulturhistoria.",
+      "Titeln ingår i katalogen för sin tydliga anknytning till Roslagen, kustlandskap och regional kulturhistoria.",
     buyUrl: "/kontakt",
     reviews: ["Utvald antikvarisk titel i katalogen."],
     subjects: ["Roslagen", "lokalhistoria", "kulturarv"]
@@ -374,7 +375,7 @@ export const books: Book[] = [
     image: "/assets/antikvariat/tradgardens-blommor.jpg",
     description: "Antikvarisk trädgårdsbok om blommor, säsonger och odling genom året.",
     authorNote:
-      "Boken är en praktiskt hållen trädgårdstitel; författaruppgift saknas i katalogunderlaget.",
+      "En praktiskt hållen trädgårdstitel om blommor, säsonger och odling genom året.",
     buyUrl: "/kontakt",
     reviews: ["Utvald antikvarisk titel i katalogen."],
     subjects: ["trädgård", "odling", "kulturhistoria"]
