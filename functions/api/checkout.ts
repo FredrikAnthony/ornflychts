@@ -17,7 +17,8 @@ const privateHeaders = {
 };
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
-  if (!env.STRIPE_SECRET_KEY) {
+  const stripeSecretKey = env.STRIPE_SECRET_KEY?.trim();
+  if (!stripeSecretKey) {
     return Response.json({ error: "Stripe saknar STRIPE_SECRET_KEY i Cloudflare." }, { status: 500, headers: privateHeaders });
   }
 
@@ -33,7 +34,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
 
   const subtotalSek = items.reduce((total, item) => total + item.product.priceSek * item.quantity, 0);
   const shippingSek = subtotalSek >= shipping.freeAboveSek ? 0 : shipping.standardSek;
-  const siteUrl = env.SITE_URL ?? new URL(request.url).origin;
+  const requestOrigin = new URL(request.url).origin;
+  const configuredSiteUrl = env.SITE_URL?.trim();
+  const siteUrl = configuredSiteUrl && URL.canParse(configuredSiteUrl) ? new URL(configuredSiteUrl).origin : requestOrigin;
   const params = new URLSearchParams();
 
   params.set("mode", "payment");
@@ -64,7 +67,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const stripeResponse = await fetch("https://api.stripe.com/v1/checkout/sessions", {
     method: "POST",
     headers: {
-      authorization: `Bearer ${env.STRIPE_SECRET_KEY}`,
+      authorization: `Bearer ${stripeSecretKey}`,
       "content-type": "application/x-www-form-urlencoded"
     },
     body: params
@@ -72,7 +75,10 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
 
   const session = (await stripeResponse.json()) as { id?: string; url?: string; error?: { message?: string } };
   if (!stripeResponse.ok || !session.url) {
-    return Response.json({ error: session.error?.message ?? "Stripe kunde inte skapa kassan." }, { status: 502, headers: privateHeaders });
+    return Response.json(
+      { error: session.error?.message ?? `Stripe kunde inte skapa kassan. Status: ${stripeResponse.status}.` },
+      { status: 502, headers: privateHeaders }
+    );
   }
 
   if (env.DB) {
