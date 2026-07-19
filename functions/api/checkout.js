@@ -1,20 +1,9 @@
-type Env = {
-  STRIPE_SECRET_KEY: string;
-  SITE_URL?: string;
-  DB?: D1Database;
-};
-
-type CartLine = {
-  slug: string;
-  quantity: number;
-};
-
 const privateHeaders = {
   "cache-control": "no-store",
   "x-robots-tag": "noindex, nofollow"
 };
 
-function jsonResponse(body: unknown, init: ResponseInit = {}) {
+function jsonResponse(body, init = {}) {
   return new Response(JSON.stringify(body), {
     ...init,
     headers: {
@@ -50,15 +39,15 @@ const products = [
   { slug: "tradgardens-blommor", title: "Tradgardens blommor", priceSek: 50 }
 ];
 
-function getProduct(slug: string) {
+function getProduct(slug) {
   return products.find((product) => product.slug === slug);
 }
 
-function toStripeAmount(sek: number) {
+function toStripeAmount(sek) {
   return Math.round(sek * 100);
 }
 
-function getSiteOrigin(configuredSiteUrl: string | undefined, requestUrl: string) {
+function getSiteOrigin(configuredSiteUrl, requestUrl) {
   const fallbackOrigin = new URL(requestUrl).origin;
   const trimmed = configuredSiteUrl?.trim();
 
@@ -71,24 +60,24 @@ function getSiteOrigin(configuredSiteUrl: string | undefined, requestUrl: string
   }
 }
 
-function normalizeQuantity(quantity: unknown) {
+function normalizeQuantity(quantity) {
   const parsed = typeof quantity === "number" ? quantity : Number(quantity);
   if (!Number.isFinite(parsed)) return 1;
   return Math.max(1, Math.min(20, Math.floor(parsed)));
 }
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+export async function onRequestPost({ request, env }) {
   try {
     const stripeSecretKey = env.STRIPE_SECRET_KEY?.trim();
     if (!stripeSecretKey) {
       return jsonResponse({ error: "Stripe saknar STRIPE_SECRET_KEY i Cloudflare." }, { status: 500 });
     }
 
-    const body = (await request.json()) as { items?: CartLine[]; email?: string };
+    const body = await request.json();
     const rawItems = Array.isArray(body.items) ? body.items : [];
     const items = rawItems
       .map((item) => ({ product: getProduct(item.slug), quantity: normalizeQuantity(item.quantity) }))
-      .filter((item): item is { product: NonNullable<ReturnType<typeof getProduct>>; quantity: number } => Boolean(item.product));
+      .filter((item) => Boolean(item.product));
 
     if (items.length === 0) {
       return jsonResponse({ error: "Varukorgen ar tom." }, { status: 400 });
@@ -133,7 +122,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       body: params
     });
 
-    const session = (await stripeResponse.json()) as { id?: string; url?: string; error?: { message?: string } };
+    const session = await stripeResponse.json();
     if (!stripeResponse.ok || !session.url) {
       return jsonResponse(
         { error: session.error?.message ?? `Stripe kunde inte skapa kassan. Status: ${stripeResponse.status}.` },
@@ -154,4 +143,4 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     const message = error instanceof Error ? error.message : "Okant fel.";
     return jsonResponse({ error: `Kassan kunde inte startas: ${message}` }, { status: 500 });
   }
-};
+}
