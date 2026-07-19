@@ -1,14 +1,20 @@
-type Env = {
-  STRIPE_WEBHOOK_SECRET?: string;
-  DB?: D1Database;
-};
-
 const privateHeaders = {
   "cache-control": "no-store",
   "x-robots-tag": "noindex, nofollow"
 };
 
-function hexToBytes(hex: string) {
+function jsonResponse(body, init = {}) {
+  return new Response(JSON.stringify(body), {
+    ...init,
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      ...privateHeaders,
+      ...(init.headers ?? {})
+    }
+  });
+}
+
+function hexToBytes(hex) {
   const bytes = new Uint8Array(hex.length / 2);
   for (let index = 0; index < bytes.length; index += 1) {
     bytes[index] = parseInt(hex.slice(index * 2, index * 2 + 2), 16);
@@ -16,7 +22,7 @@ function hexToBytes(hex: string) {
   return bytes;
 }
 
-async function verifySignature(request: Request, body: string, env: Env) {
+async function verifySignature(request, body, env) {
   const signature = request.headers.get("stripe-signature");
   if (!signature || !env.STRIPE_WEBHOOK_SECRET) return false;
 
@@ -30,7 +36,7 @@ async function verifySignature(request: Request, body: string, env: Env) {
     new TextEncoder().encode(env.STRIPE_WEBHOOK_SECRET),
     { name: "HMAC", hash: "SHA-256" },
     false,
-    ["sign"],
+    ["sign"]
   );
   const digest = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(`${timestamp}.${body}`));
   const expected = hexToBytes(signed);
@@ -44,15 +50,12 @@ async function verifySignature(request: Request, body: string, env: Env) {
   return diff === 0;
 }
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+export async function onRequestPost({ request, env }) {
   const body = await request.text();
   const verified = await verifySignature(request, body, env);
-  if (!verified) return Response.json({ error: "Webhook saknar verifiering." }, { status: 401, headers: privateHeaders });
+  if (!verified) return jsonResponse({ error: "Webhook saknar verifiering." }, { status: 401 });
 
-  const event = JSON.parse(body) as {
-    type?: string;
-    data?: { object?: { id?: string; customer_email?: string; metadata?: Record<string, string>; amount_total?: number } };
-  };
+  const event = JSON.parse(body);
 
   if (event.type === "checkout.session.completed" && env.DB) {
     const session = event.data?.object;
@@ -63,5 +66,5 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     }
   }
 
-  return Response.json({ received: true }, { headers: privateHeaders });
-};
+  return jsonResponse({ received: true });
+}
