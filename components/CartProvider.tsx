@@ -15,20 +15,38 @@ type CartContextValue = {
 const CartContext = createContext<CartContextValue | null>(null);
 const storageKey = "ornflychts-cart";
 
+function normalizeQuantity(quantity: unknown) {
+  const parsed = typeof quantity === "number" ? quantity : Number(quantity);
+  if (!Number.isFinite(parsed)) return 1;
+  return Math.max(1, Math.min(20, Math.floor(parsed)));
+}
+
+function normalizeLines(lines: unknown): CartLine[] {
+  if (!Array.isArray(lines)) return [];
+  return lines
+    .filter((line): line is { slug: unknown; quantity: unknown } => typeof line === "object" && line !== null)
+    .filter((line) => typeof line.slug === "string" && line.slug.length > 0)
+    .map((line) => ({ slug: line.slug as string, quantity: normalizeQuantity(line.quantity) }));
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
   const [lines, setLines] = useState<CartLine[]>([]);
 
   useEffect(() => {
     try {
       const stored = window.localStorage.getItem(storageKey);
-      if (stored) setLines(JSON.parse(stored));
+      if (stored) setLines(normalizeLines(JSON.parse(stored)));
     } catch {
       setLines([]);
     }
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem(storageKey, JSON.stringify(lines));
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify(normalizeLines(lines)));
+    } catch {
+      // The cart still works for the current session if storage is unavailable.
+    }
   }, [lines]);
 
   const value = useMemo<CartContextValue>(() => {
@@ -45,7 +63,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         });
       },
       setQuantity(slug, quantity) {
-        const nextQuantity = Math.max(1, Math.min(20, Math.floor(quantity)));
+        const nextQuantity = normalizeQuantity(quantity);
         setLines((current) => current.map((line) => (line.slug === slug ? { ...line, quantity: nextQuantity } : line)));
       },
       removeItem(slug) {

@@ -24,7 +24,8 @@ export function CartPageClient() {
       });
       const data = (await response.json()) as { url?: string; error?: string };
       if (!response.ok || !data.url) throw new Error(data.error ?? "Kassan kunde inte startas.");
-      window.location.href = data.url;
+      const checkoutUrl = new URL(data.url);
+      window.location.assign(checkoutUrl.toString());
     } catch (checkoutError) {
       setError(checkoutError instanceof Error ? checkoutError.message : "Kassan kunde inte startas.");
       setLoading(false);
