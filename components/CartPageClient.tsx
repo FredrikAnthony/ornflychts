@@ -22,7 +22,11 @@ export function CartPageClient() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ items: cart.lines, email })
       });
-      const data = (await response.json()) as { url?: string; error?: string };
+      const responseText = await response.text();
+      const data = responseText.startsWith("{") ? (JSON.parse(responseText) as { url?: string; error?: string }) : {};
+      if (!responseText.startsWith("{")) {
+        throw new Error(`Kassan kunde inte startas. API:t svarade med ${response.status} ${response.statusText}.`);
+      }
       if (!response.ok || !data.url) throw new Error(data.error ?? "Kassan kunde inte startas.");
       const checkoutUrl = new URL(data.url);
       window.location.assign(checkoutUrl.toString());
