@@ -14,6 +14,17 @@ const privateHeaders = {
   "x-robots-tag": "noindex, nofollow"
 };
 
+function jsonResponse(body: unknown, init: ResponseInit = {}) {
+  return new Response(JSON.stringify(body), {
+    ...init,
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      ...privateHeaders,
+      ...(init.headers ?? {})
+    }
+  });
+}
+
 const shipping = {
   standardSek: 69,
   freeAboveSek: 600
@@ -70,7 +81,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   try {
     const stripeSecretKey = env.STRIPE_SECRET_KEY?.trim();
     if (!stripeSecretKey) {
-      return Response.json({ error: "Stripe saknar STRIPE_SECRET_KEY i Cloudflare." }, { status: 500, headers: privateHeaders });
+      return jsonResponse({ error: "Stripe saknar STRIPE_SECRET_KEY i Cloudflare." }, { status: 500 });
     }
 
     const body = (await request.json()) as { items?: CartLine[]; email?: string };
@@ -80,7 +91,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       .filter((item): item is { product: NonNullable<ReturnType<typeof getProduct>>; quantity: number } => Boolean(item.product));
 
     if (items.length === 0) {
-      return Response.json({ error: "Varukorgen ar tom." }, { status: 400, headers: privateHeaders });
+      return jsonResponse({ error: "Varukorgen ar tom." }, { status: 400 });
     }
 
     const subtotalSek = items.reduce((total, item) => total + item.product.priceSek * item.quantity, 0);
@@ -124,9 +135,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
 
     const session = (await stripeResponse.json()) as { id?: string; url?: string; error?: { message?: string } };
     if (!stripeResponse.ok || !session.url) {
-      return Response.json(
+      return jsonResponse(
         { error: session.error?.message ?? `Stripe kunde inte skapa kassan. Status: ${stripeResponse.status}.` },
-        { status: 502, headers: privateHeaders }
+        { status: 502 }
       );
     }
 
@@ -138,9 +149,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
         .run();
     }
 
-    return Response.json({ url: session.url }, { headers: privateHeaders });
+    return jsonResponse({ url: session.url });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Okant fel.";
-    return Response.json({ error: `Kassan kunde inte startas: ${message}` }, { status: 500, headers: privateHeaders });
+    return jsonResponse({ error: `Kassan kunde inte startas: ${message}` }, { status: 500 });
   }
 };
