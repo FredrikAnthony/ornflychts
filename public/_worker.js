@@ -123,15 +123,24 @@ async function checkout(request, env) {
 
     const session = await stripeResponse.json();
     if (!stripeResponse.ok || !session.url) {
+      const stripeError = session.error || {};
+      const detail = [stripeError.message, stripeError.code, stripeError.param].filter(Boolean).join(" ");
+      console.error("Stripe checkout failed", {
+        status: stripeResponse.status,
+        type: stripeError.type,
+        code: stripeError.code,
+        param: stripeError.param
+      });
       return jsonResponse(
-        { error: (session.error && session.error.message) || `Stripe kunde inte skapa kassan. Status: ${stripeResponse.status}.` },
-        { status: 502 }
+        { error: detail || `Stripe kunde inte skapa kassan. Status: ${stripeResponse.status}.` },
+        { status: stripeResponse.status }
       );
     }
 
     return jsonResponse({ url: session.url });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Okant fel.";
+    console.error("Checkout crashed", { message });
     return jsonResponse({ error: `Kassan kunde inte startas: ${message}` }, { status: 500 });
   }
 }
@@ -141,7 +150,7 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/ping") {
-      return jsonResponse({ ok: true });
+      return jsonResponse({ ok: true, worker: "advanced", version: "checkout-diagnostics-1" });
     }
 
     if (url.pathname === "/api/checkout" && request.method === "POST") {
