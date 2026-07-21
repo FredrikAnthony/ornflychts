@@ -41,6 +41,12 @@ export default function ContactPage() {
             Mejla gärna om en antikvarisk titel, ett ämnesområde eller en beställning kräver särskild hantering.
           </p>
         </div>
+        <div className="mt-6 border-t border-line pt-6 text-sm leading-7 text-ink/68 dark:border-white/10 dark:text-ivory/68">
+          <p className="font-semibold text-ink dark:text-ivory">Företagsuppgifter</p>
+          <p className="mt-2">Bokförlaget Örnflycht</p>
+          <p>Drotningkristinas väg 10, 761 40 Norrtälje</p>
+          <p>Organisationsnummer kompletteras i de offentliga företagsuppgifterna.</p>
+        </div>
       </div>
     </main>
   );

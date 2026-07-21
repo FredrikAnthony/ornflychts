@@ -5,7 +5,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticRoutes = ["", "/bocker", "/artiklar", "/kontakt"];
+  const staticRoutes = ["", "/bocker", "/artiklar", "/kontakt", "/kopvillkor", "/angra-kop", "/integritetspolicy"];
   const bookRoutes = books.map((book) => `/bocker/${book.slug}`);
   const articleRoutes = articles.map((article) => `/artiklar/${article.slug}`);
 
