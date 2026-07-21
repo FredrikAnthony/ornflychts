@@ -35,7 +35,7 @@ export default function PrivacyPage() {
         <div className="mt-10 grid gap-8 text-sm leading-7 text-ink/72 dark:text-ivory/72">
           <section>
             <h2 className="font-serif text-2xl text-ink dark:text-ivory">Personuppgiftsansvarig</h2>
-            <p className="mt-3">Bokförlaget Örnflycht, Drotningkristinas väg 10, 761 40 Norrtälje. Kontakt: info@ornflychts.se.</p>
+            <p className="mt-3">Bokförlaget Örnflycht drivs av Pensionat Granparken Aktiebolag, organisationsnummer 556378-2837, Drottning Kristinas väg 10, 761 40 Norrtälje. Kontakt: info@ornflychts.se.</p>
           </section>
           <section>
             <h2 className="font-serif text-2xl text-ink dark:text-ivory">Vilka uppgifter behandlas?</h2>
