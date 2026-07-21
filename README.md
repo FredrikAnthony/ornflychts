@@ -1,48 +1,27 @@
-# Örnflychts Förlag
+# Ornflychts website repository
 
-Webbplats för Örnflychts Förlag byggd i Next.js, TypeScript och Tailwind CSS.
+This is the source repository for the website published at:
 
-Sidan är byggd som en modern förlagssajt med bokkatalog, artiklar, semantisk HTML, JSON-LD, Open Graph, sitemap och robots-fil.
+https://ornflychts.se
 
-## Lokal utveckling
+The public website presents Örnflychts Förlag och Antikvariat. This repository is mainly for development, deployment and version history.
+
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Produktion
+## Production
 
-Projektet är konfigurerat med `output: "export"` och bygger statiska filer till `out/`.
+The site is built as a static Next.js export for Cloudflare Pages.
 
-Detta ska deployas som Cloudflare Pages, inte som Cloudflare Worker. Repot saknar Worker-entrypoint och `wrangler.toml`, och `next.config.mjs` använder statisk Next-export.
-
-Cloudflare Pages-inställningar:
-
-- Framework preset: `Next.js (Static HTML Export)`
+- Framework preset: Next.js Static HTML Export
 - Build command: `npm run build`
 - Build output directory: `out`
-- Root directory: lämnas tom om repots rot används
+- Root directory: empty
 
-`public/_headers` sätter säkerhetsheaders för Cloudflare Pages, inklusive HSTS, CSP, frame-skydd och no-store/noindex för admin/API.
+## Payments
 
-## E-handel
-
-Sajten har en första e-handelsgrund med varukorg, säker kortbetalning via Stripe Checkout, fast fraktlogik, D1-tabell för order samt skyddad orderadmin via API.
-
-För att aktivera detta i Cloudflare Pages:
-
-1. Skapa en D1-databas, till exempel `ornflychts`.
-2. Kör SQL från `schema.sql` i D1.
-3. Lägg till D1-binding i Cloudflare Pages: `DB`.
-4. Lägg till miljövariabler/secrets:
-   - `STRIPE_SECRET_KEY`
-   - `STRIPE_WEBHOOK_SECRET`
-   - `ADMIN_TOKEN`
-   - `ADMIN_EMAIL=info@ornflychts.se`
-   - `SITE_URL=https://ornflychts.se`
-5. Skapa Stripe-webhook till `https://ornflychts.se/api/stripe-webhook` för eventet `checkout.session.completed` om eget orderflöde aktiveras.
-
-`wrangler.example.toml` visar hur D1-bindingen kan se ut om projektet hanteras med Wrangler. Kopiera den till `wrangler.toml` först när ett riktigt D1 database-id finns.
-
-PDF-filen `hannas hus 13 november.pdf` ska inte ändras eller laddas upp. Ospårade originalbilder ska inte laddas upp utan uttrycklig begäran.
+Checkout is handled through Stripe Checkout. Card details are handled by Stripe and are not stored by the website.
