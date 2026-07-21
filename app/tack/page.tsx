@@ -19,7 +19,7 @@ export default function ThankYouPage() {
             Tack för din beställning
           </h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
-            Betalningen är genomförd och beställningen är mottagen. Stripe skickar kvitto via e-post när kvittomejl är aktiverat för kontot. Hör av dig till{" "}
+            Betalningen är genomförd och beställningen är mottagen. Kortbetalningen har hanterats säkert av Stripe. Hör av dig till{" "}
             <a href="mailto:info@ornflychts.se" className="underline hover:text-brass">
               info@ornflychts.se
             </a>{" "}

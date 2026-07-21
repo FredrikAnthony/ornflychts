@@ -28,7 +28,7 @@ Cloudflare Pages-inställningar:
 
 ## E-handel
 
-Sajten har en första e-handelsgrund med varukorg, Stripe Checkout, fast fraktlogik, D1-tabell för order samt skyddad orderadmin via API. Swish kan aktiveras i Stripe när betalmetoden är godkänd för kontot.
+Sajten har en första e-handelsgrund med varukorg, säker kortbetalning via Stripe Checkout, fast fraktlogik, D1-tabell för order samt skyddad orderadmin via API.
 
 För att aktivera detta i Cloudflare Pages:
 
@@ -41,8 +41,7 @@ För att aktivera detta i Cloudflare Pages:
    - `ADMIN_TOKEN`
    - `ADMIN_EMAIL=info@ornflychts.se`
    - `SITE_URL=https://ornflychts.se`
-5. Aktivera Swish i Stripe Dashboard under betalmetoder för Checkout.
-6. Skapa Stripe-webhook till `https://ornflychts.se/api/stripe-webhook` för eventet `checkout.session.completed`.
+5. Skapa Stripe-webhook till `https://ornflychts.se/api/stripe-webhook` för eventet `checkout.session.completed` om eget orderflöde aktiveras.
 
 `wrangler.example.toml` visar hur D1-bindingen kan se ut om projektet hanteras med Wrangler. Kopiera den till `wrangler.toml` först när ett riktigt D1 database-id finns.
 

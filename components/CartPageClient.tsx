@@ -109,7 +109,7 @@ export function CartPageClient() {
           {loading ? "Öppnar kassa..." : "Betala med kort"}
         </button>
         <p className="mt-4 text-xs leading-6 text-ink/56 dark:text-ivory/56">
-          Betalningen hanteras av Stripe. Swish kan aktiveras när betalmetoden är godkänd för kontot.
+          Säker kortbetalning via Stripe Checkout. Kortuppgifter hanteras krypterat av Stripe och lagras inte av Örnflychts Förlag och Antikvariat.
         </p>
       </aside>
     </div>

@@ -24,7 +24,7 @@ export default function CartPage() {
           <p className="eyebrow">Kassa</p>
           <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink dark:text-ivory">Varukorg</h1>
           <p className="mt-5 text-lg leading-9 text-ink/74 dark:text-ivory/74">
-            Betalningen sker via Stripe Checkout. Frakt läggs på automatiskt och kvitto skickas via e-post.
+            Betalningen sker säkert via Stripe Checkout. Frakt läggs på automatiskt och dina kortuppgifter lagras inte av sajten.
           </p>
         </header>
         <CartPageClient />
