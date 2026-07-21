@@ -20,8 +20,9 @@ export function ThankYouClient() {
   if (!sessionId) return null;
 
   return (
-    <p className="card mt-8 p-6 text-sm text-ink/70 dark:text-ivory/70">
-      Ordernummer (Stripe-session): <span className="font-mono">{sessionId}</span>
-    </p>
+    <div className="card mt-8 max-w-full p-5 text-sm text-ink/70 dark:text-ivory/70 sm:p-6">
+      <p className="font-semibold">Ordernummer</p>
+      <p className="mt-2 break-all font-mono text-xs leading-6 text-ink/62 dark:text-ivory/62 sm:text-sm">{sessionId}</p>
+    </div>
   );
 }
