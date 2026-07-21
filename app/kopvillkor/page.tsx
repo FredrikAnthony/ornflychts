@@ -19,7 +19,8 @@ const sections = [
   {
     title: "Företagsuppgifter",
     body: [
-      "Säljare är Bokförlaget Örnflycht. Verksamheten drivs av Pensionat Granparken Aktiebolag, organisationsnummer 556378-2837.",
+      "Säljare är Örnflychts Förlag och Antikvariat. Verksamheten är knuten till organisationsnummer 556378-2837.",
+      "Juridisk part är Pensionat Granparken Aktiebolag, organisationsnummer 556378-2837.",
       "Adress: Drottning Kristinas väg 10, 761 40 Norrtälje. Kontakt sker via info@ornflychts.se."
     ]
   },

@@ -43,9 +43,10 @@ export default function ContactPage() {
         </div>
         <div className="mt-6 border-t border-line pt-6 text-sm leading-7 text-ink/68 dark:border-white/10 dark:text-ivory/68">
           <p className="font-semibold text-ink dark:text-ivory">Företagsuppgifter</p>
-          <p className="mt-2">Bokförlaget Örnflycht</p>
-          <p>Verksamheten drivs av Pensionat Granparken Aktiebolag, organisationsnummer 556378-2837.</p>
+          <p className="mt-2">Örnflychts Förlag och Antikvariat</p>
+          <p>Organisationsnummer 556378-2837</p>
           <p>Drottning Kristinas väg 10, 761 40 Norrtälje</p>
+          <p className="mt-3">Betalning sker via Stripe Checkout. Kortuppgifter lagras inte av sajten.</p>
         </div>
       </div>
     </main>

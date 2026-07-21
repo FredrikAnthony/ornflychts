@@ -15,17 +15,17 @@ const products = [
   { slug: "kockarnas-kokbok", title: "Kockarnas kokbok", priceSek: 65 },
   { slug: "not-street-art", title: "Not Street Art", priceSek: 120 },
   { slug: "smak-av-svunnen-tid", title: "Smak av svunnen tid", priceSek: 80 },
-  { slug: "bockernas-mat", title: "Bockernas mat", priceSek: 75 },
+  { slug: "bockernas-mat", title: "Böckernas mat", priceSek: 75 },
   { slug: "masken-uti-rosen", title: "Masken uti rosen", priceSek: 60 },
-  { slug: "nina-bjork-drommen-om-det-roda", title: "Drommen om det roda", priceSek: 70 },
+  { slug: "nina-bjork-drommen-om-det-roda", title: "Drömmen om det röda", priceSek: 70 },
   { slug: "tisdagar-med-tofflorna", title: "Tisdagar med tofflorna", priceSek: 45 },
   { slug: "roslagen", title: "Roslagen", priceSek: 95 },
   { slug: "till-bords-hos-monet", title: "Till bords hos Monet", priceSek: 80 },
-  { slug: "slaktforska-steg-for-steg", title: "Slaktforska steg for steg", priceSek: 60 },
-  { slug: "bordets-frojder", title: "Bordets frojder", priceSek: 90 },
+  { slug: "slaktforska-steg-for-steg", title: "Släktforska steg för steg", priceSek: 60 },
+  { slug: "bordets-frojder", title: "Bordets fröjder", priceSek: 90 },
   { slug: "krogliv", title: "Krogliv", priceSek: 45 },
   { slug: "muramaris-en-karlekshistoria", title: "Muramaris: en karlekshistoria", priceSek: 70 },
-  { slug: "tradgardens-blommor", title: "Tradgardens blommor", priceSek: 50 }
+  { slug: "tradgardens-blommor", title: "Trädgårdens blommor", priceSek: 50 }
 ];
 
 function jsonResponse(body, init = {}) {
@@ -69,7 +69,11 @@ async function checkout(request, env) {
   try {
     const stripeSecretKey = env.STRIPE_SECRET_KEY && env.STRIPE_SECRET_KEY.trim();
     if (!stripeSecretKey) {
-      return jsonResponse({ error: "Stripe saknar STRIPE_SECRET_KEY i Cloudflare." }, { status: 500 });
+      console.error("Checkout is missing STRIPE_SECRET_KEY");
+      return jsonResponse(
+        { error: "Kassan kunde inte startas just nu. Försök igen eller kontakta info@ornflychts.se." },
+        { status: 500 }
+      );
     }
 
     const body = await request.json();
@@ -132,7 +136,7 @@ async function checkout(request, env) {
         param: stripeError.param
       });
       return jsonResponse(
-        { error: detail || `Stripe kunde inte skapa kassan. Status: ${stripeResponse.status}.` },
+        { error: "Kassan kunde inte startas just nu. Försök igen eller kontakta info@ornflychts.se." },
         { status: stripeResponse.status }
       );
     }
@@ -141,7 +145,10 @@ async function checkout(request, env) {
   } catch (error) {
     const message = error instanceof Error ? error.message : "Okant fel.";
     console.error("Checkout crashed", { message });
-    return jsonResponse({ error: `Kassan kunde inte startas: ${message}` }, { status: 500 });
+    return jsonResponse(
+      { error: "Kassan kunde inte startas just nu. Försök igen eller kontakta info@ornflychts.se." },
+      { status: 500 }
+    );
   }
 }
 

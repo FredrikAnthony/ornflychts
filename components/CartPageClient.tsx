@@ -25,13 +25,15 @@ export function CartPageClient() {
       const responseText = await response.text();
       const data = responseText.startsWith("{") ? (JSON.parse(responseText) as { url?: string; error?: string }) : {};
       if (!responseText.startsWith("{")) {
-        throw new Error(`Kassan kunde inte startas. API:t svarade med ${response.status} ${response.statusText}.`);
+        throw new Error("Kassan kunde inte startas just nu. Försök igen eller kontakta info@ornflychts.se.");
       }
-      if (!response.ok || !data.url) throw new Error(data.error ?? "Kassan kunde inte startas.");
+      if (!response.ok || !data.url) {
+        throw new Error(data.error ?? "Kassan kunde inte startas just nu. Försök igen eller kontakta info@ornflychts.se.");
+      }
       const checkoutUrl = new URL(data.url);
       window.location.assign(checkoutUrl.toString());
     } catch (checkoutError) {
-      setError(checkoutError instanceof Error ? checkoutError.message : "Kassan kunde inte startas.");
+      setError(checkoutError instanceof Error ? checkoutError.message : "Kassan kunde inte startas just nu. Försök igen eller kontakta info@ornflychts.se.");
       setLoading(false);
     }
   }
